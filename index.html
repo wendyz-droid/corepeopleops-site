@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Core People Operations | HR With Vitality</title>
+    <title>Core People Operations | Payroll-Centered HR</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body {
@@ -28,7 +28,7 @@
             box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
         }
         .animated-bg {
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background: linear-gradient(-45deg, #4f46e5, #ec4899, #0ea5e9, #10b981);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
         }
@@ -63,11 +63,21 @@
         .modal-active .modal-content { transform: scale(1) translateY(0); }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .step-line {
+            position: absolute;
+            top: 24px;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background: #e2e8f0;
+            z-index: -1;
+        }
     </style>
 </head>
 <body class="text-slate-800">
 
-    <!-- 导航栏 -->
+    <!-- Navigation -->
     <nav class="fixed w-full z-[100] top-0 px-6 py-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center glass-card rounded-full px-8 py-3 shadow-lg">
             <div class="flex items-center space-x-2 cursor-pointer" onclick="window.scrollTo(0,0)">
@@ -75,105 +85,270 @@
                 <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-pink-600">Core People Ops</span>
             </div>
             <div class="hidden md:flex space-x-10 font-bold text-slate-600 items-center">
-                <a href="#services" class="hover:text-indigo-600 transition-colors" data-i18n="nav_services">Services</a>
-                <a href="#vision" class="hover:text-indigo-600 transition-colors" data-i18n="nav_roadmap">Roadmap</a>
-                <button onclick="openModal('contact')" class="hover:text-indigo-600 transition-colors" data-i18n="nav_contact">Contact</button>
+                <a href="#problem" class="hover:text-indigo-600 transition-colors" data-i18n="nav_problem">The Challenge</a>
+                <a href="#services" class="hover:text-indigo-600 transition-colors" data-i18n="nav_services">Core Services</a>
+                <a href="#process" class="hover:text-indigo-600 transition-colors" data-i18n="nav_process">How We Work</a>
             </div>
             
             <div class="flex items-center space-x-3">
-                <!-- 语言切换按钮 -->
                 <button onclick="toggleLanguage()" class="flex items-center justify-center px-4 py-2 rounded-full bg-slate-100/50 hover:bg-white text-indigo-600 border border-indigo-100 transition-all shadow-sm font-bold text-sm">
                     <i data-lucide="globe" class="w-4 h-4 mr-2"></i>
                     <span id="lang-label">中</span>
                 </button>
-                <button onclick="openModal('contact')" class="hidden md:block bg-indigo-600 text-white px-6 py-2 rounded-full font-bold hover:shadow-xl hover:bg-indigo-700 transition active:scale-95" data-i18n="nav_book">
+                <a href="https://calendar.app.google/sZtzjvNQF5mQ5552A" target="_blank" class="hidden md:block bg-indigo-600 text-white px-6 py-2 rounded-full font-bold hover:shadow-xl hover:bg-indigo-700 transition active:scale-95" data-i18n="nav_book">
                     Book Consult
-                </button>
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ① HERO Section -->
     <section class="pt-48 pb-32 px-6 animated-bg text-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto text-center relative z-10">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 leading-tight tracking-tight" data-i18n="hero_title">
-                HR with AI Optimization <br> <span class="text-yellow-300 italic">Can Be Joyful</span>
+            <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight" data-i18n="hero_title">
+                Payroll-Centered HR Consulting <br><span class="text-yellow-300 italic">for Growing Businesses</span>
             </h1>
-            <p class="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto mb-14 font-medium leading-relaxed" data-i18n="hero_desc">
-                Say goodbye to boring manuals and tedious reconciliations. We provide compliant, smart, and vibrant HR operations for small teams.
+            <p class="text-xl md:text-2xl opacity-90 max-w-4xl mx-auto mb-14 font-medium leading-relaxed" data-i18n="hero_desc">
+                We manage your ADP, Paychex, or Gusto platform, strengthen compliance, and build a scalable HR foundation — so your team can focus on growth.
             </p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-5 md:space-y-0 md:space-x-8">
+                <a href="https://calendar.app.google/sZtzjvNQF5mQ5552A" target="_blank" class="bg-white text-indigo-600 px-12 py-5 rounded-[2rem] font-extrabold text-xl shadow-2xl hover:bg-slate-50 transition transform hover:-translate-y-1 flex items-center" data-i18n="hero_btn1">
+                    <i data-lucide="phone-call" class="mr-3 w-6 h-6"></i> Book a Payroll Strategy Call
+                </a>
+                <button onclick="openModal('payroll')" class="bg-indigo-900/40 border-2 border-white/30 backdrop-blur-md text-white px-12 py-5 rounded-[2rem] font-extrabold text-xl hover:bg-white/20 transition transform hover:-translate-y-1 flex items-center" data-i18n="hero_btn2">
+                    <i data-lucide="settings" class="mr-3 w-6 h-6"></i> See How We Operate ADP
+                </button>
+            </div>
         </div>
-        <!-- 装饰性元素 -->
         <div class="absolute top-1/2 left-0 w-64 h-64 bg-yellow-400 rounded-full blur-[120px] opacity-30"></div>
         <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500 rounded-full blur-[150px] opacity-40"></div>
     </section>
 
-    <!-- 核心业务模块 -->
-    <section id="services" class="py-28 px-6 bg-white relative z-10">
+    <!-- ② Problem Section -->
+    <section id="problem" class="py-24 px-6 bg-rose-50/50">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <span class="text-pink-600 font-extrabold tracking-[0.2em] uppercase text-xs px-5 py-2 bg-pink-50 rounded-full mb-6 inline-block" data-i18n="srv_highlight">Service Highlights</span>
-                <h2 class="text-5xl md:text-6xl font-extrabold text-slate-900 leading-tight" data-i18n="srv_title">Core Services Magic</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900" data-i18n="prob_title">Is Your Payroll Platform Really Under Control?</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-rose-100 flex items-start space-x-4">
+                    <div class="bg-rose-100 p-3 rounded-xl text-rose-600 shrink-0"><i data-lucide="alert-circle" class="w-6 h-6"></i></div>
+                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li1">Payroll errors and reprocessing</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-rose-100 flex items-start space-x-4">
+                    <div class="bg-rose-100 p-3 rounded-xl text-rose-600 shrink-0"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
+                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li2">Multi-state compliance confusion</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-rose-100 flex items-start space-x-4">
+                    <div class="bg-rose-100 p-3 rounded-xl text-rose-600 shrink-0"><i data-lucide="calendar-off" class="w-6 h-6"></i></div>
+                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li3">Year-end panic (W-2 / 1099 corrections)</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-rose-100 flex items-start space-x-4">
+                    <div class="bg-rose-100 p-3 rounded-xl text-rose-600 shrink-0"><i data-lucide="user-minus" class="w-6 h-6"></i></div>
+                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li4">HR manager overloaded with admin</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-rose-100 flex items-start space-x-4">
+                    <div class="bg-rose-100 p-3 rounded-xl text-rose-600 shrink-0"><i data-lucide="file-x" class="w-6 h-6"></i></div>
+                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li5">No structured policy documentation</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-rose-100 flex items-start space-x-4">
+                    <div class="bg-rose-100 p-3 rounded-xl text-rose-600 shrink-0"><i data-lucide="shield-alert" class="w-6 h-6"></i></div>
+                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li6">No internal payroll audit process</p>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Payroll Card -->
-                <div class="group p-12 rounded-[4rem] bg-indigo-50 border border-indigo-100 hover-bounce shadow-sm hover:shadow-2xl transition-all relative overflow-hidden flex flex-col">
-                    <div class="relative z-10 flex-1">
-                        <div class="w-20 h-20 bg-indigo-600 rounded-3xl flex items-center justify-center text-white mb-10 shadow-xl group-hover:rotate-12 group-hover:scale-110 transition-transform">
-                            <i data-lucide="wallet" class="w-10 h-10"></i>
-                        </div>
-                        <h3 class="text-4xl font-extrabold mb-6 text-indigo-950 tracking-tight" data-i18n="srv_pay_title">Smart Payroll</h3>
-                        <p class="text-slate-600 mb-10 text-xl leading-relaxed" data-i18n="srv_pay_desc">
-                            Based on standardized <b>Onboarding</b> processes. Accurate reconciliation, zero tax risks.
-                        </p>
-                    </div>
-                    <div class="relative z-10 mt-6 flex flex-col xl:flex-row gap-4">
-                        <button onclick="openModal('payroll')" class="flex-1 bg-white border-2 border-indigo-200 text-indigo-600 px-6 py-4 rounded-3xl font-bold hover:bg-indigo-50 transition flex items-center justify-center text-lg" data-i18n="srv_pay_btn">
-                            Details & Pricing
-                        </button>
-                        <a href="https://calendar.app.google/sZtzjvNQF5mQ5552A" target="_blank" class="flex-1 bg-indigo-600 text-white px-6 py-4 rounded-3xl font-bold hover:bg-indigo-700 transition flex items-center justify-center shadow-lg hover:shadow-xl text-lg" data-i18n="btn_book">
-                            <i data-lucide="calendar" class="w-6 h-6 mr-2"></i> Book Meeting
-                        </a>
-                    </div>
-                </div>
-
-                <!-- AI Wiki Card -->
-                <div class="group p-12 rounded-[4rem] bg-emerald-50 border border-emerald-100 hover-bounce shadow-sm hover:shadow-2xl transition-all relative overflow-hidden flex flex-col">
-                    <div class="relative z-10 flex-1">
-                        <div class="w-20 h-20 bg-emerald-600 rounded-3xl flex items-center justify-center text-white mb-10 shadow-xl group-hover:-rotate-12 group-hover:scale-110 transition-transform">
-                            <i data-lucide="brain" class="w-10 h-10"></i>
-                        </div>
-                        <h3 class="text-4xl font-extrabold mb-6 text-emerald-950 tracking-tight" data-i18n="srv_wiki_title">AI Policy Wiki</h3>
-                        <p class="text-slate-600 mb-10 text-xl leading-relaxed" data-i18n="srv_wiki_desc">
-                            Standardized <b>SPU</b> pricing. Transform manuals into 24/7 online AI compliance experts.
-                        </p>
-                    </div>
-                    <div class="relative z-10 mt-6 flex flex-col xl:flex-row gap-4">
-                        <button onclick="openModal('wiki')" class="flex-1 bg-white border-2 border-emerald-200 text-emerald-600 px-6 py-4 rounded-3xl font-bold hover:bg-emerald-50 transition flex items-center justify-center text-lg" data-i18n="srv_wiki_btn">
-                            View Architecture
-                        </button>
-                        <a href="https://calendar.app.google/sZtzjvNQF5mQ5552A" target="_blank" class="flex-1 bg-emerald-600 text-white px-6 py-4 rounded-3xl font-bold hover:bg-emerald-700 transition flex items-center justify-center shadow-lg hover:shadow-xl text-lg" data-i18n="btn_book">
-                            <i data-lucide="calendar" class="w-6 h-6 mr-2"></i> Book Meeting
-                        </a>
-                    </div>
+            <div class="text-center">
+                <div class="inline-block bg-rose-600 text-white px-8 py-4 rounded-full font-black text-xl md:text-2xl shadow-xl transform -rotate-1">
+                    <span data-i18n="prob_concl">Payroll systems don’t fail. Poor management does.</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 未来路线图 -->
-    <section id="vision" class="py-28 px-6 bg-slate-50">
-        <div class="max-w-7xl mx-auto text-center">
-            <div class="mb-20">
-                <span class="text-indigo-600 font-extrabold tracking-widest uppercase text-xs px-5 py-2 bg-indigo-50 rounded-full mb-6 inline-block" data-i18n="vis_strategy">Growth Strategy</span>
-                <h2 class="text-5xl font-extrabold mt-4 text-slate-900" data-i18n="vis_title">Full-Cycle HR Ecosystem</h2>
-                <p class="text-slate-500 mt-8 text-xl max-w-2xl mx-auto" data-i18n="vis_desc">Click the sections below to preview our strategic blueprint.</p>
+    <!-- ③ Core Services -->
+    <section id="services" class="py-28 px-6 bg-white relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <span class="text-indigo-600 font-extrabold tracking-[0.2em] uppercase text-xs px-5 py-2 bg-indigo-50 rounded-full mb-6 inline-block" data-i18n="srv_label">Focus Areas</span>
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight" data-i18n="srv_title">Core Services</h2>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8" id="roadmap-grid">
-                <!-- 动态填充 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Main Service (60% Weight) -> Full Width on desktop using col-span-2 -->
+                <div class="md:col-span-2 group p-10 md:p-14 rounded-[3rem] bg-indigo-50 border border-indigo-100 hover-bounce shadow-sm flex flex-col md:flex-row gap-10 items-center">
+                    <div class="flex-1">
+                        <div class="w-20 h-20 bg-indigo-600 rounded-3xl flex items-center justify-center text-white mb-8 shadow-xl group-hover:scale-110 transition-transform">
+                            <i data-lucide="monitor-cog" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-4xl font-black mb-4 text-indigo-950" data-i18n="srv1_title">Payroll Platform Management</h3>
+                        <p class="text-slate-600 text-xl font-medium mb-8 leading-relaxed" data-i18n="srv1_desc">
+                            We operate your payroll system like an internal specialist — without the overhead.
+                        </p>
+                        <ul class="space-y-3 text-lg font-semibold text-slate-800 mb-10">
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500"></i> <span data-i18n="srv1_l1">ADP / Paychex / Gusto administration</span></li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500"></i> <span data-i18n="srv1_l2">Multi-state payroll management</span></li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500"></i> <span data-i18n="srv1_l3">Payroll audit & cleanup</span></li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500"></i> <span data-i18n="srv1_l4">1099 / W-2 classification review</span></li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500"></i> <span data-i18n="srv1_l5">Quarterly filings support & Year-end processing</span></li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500"></i> <span data-i18n="srv1_l6">Internal payroll controls</span></li>
+                        </ul>
+                        <button onclick="openModal('payroll')" class="bg-indigo-600 text-white px-8 py-4 rounded-full font-bold hover:bg-indigo-700 transition flex items-center text-lg shadow-lg">
+                            <span data-i18n="srv1_btn">Learn How Our Operator Model Works</span> <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                        </button>
+                    </div>
+                    <div class="hidden md:block w-1/3">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=600" alt="Payroll Audit" class="rounded-[2rem] shadow-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500">
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group p-10 rounded-[3rem] bg-emerald-50 border border-emerald-100 hover-bounce shadow-sm flex flex-col">
+                    <div class="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-xl">
+                        <i data-lucide="book-open-check" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-black mb-4 text-emerald-950" data-i18n="srv2_title">HR Policy & Knowledge Infrastructure</h3>
+                    <p class="text-slate-600 text-lg mb-6 leading-relaxed" data-i18n="srv2_desc">
+                        Structured HR documentation that reduces risk and confusion.
+                    </p>
+                    <ul class="space-y-3 text-md font-semibold text-slate-800 flex-1">
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-emerald-500 shrink-0"></i> <span data-i18n="srv2_l1">Employee handbook drafting</span></li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-emerald-500 shrink-0"></i> <span data-i18n="srv2_l2">Compliance policy design</span></li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-emerald-500 shrink-0"></i> <span data-i18n="srv2_l3">SOP documentation</span></li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-emerald-500 shrink-0"></i> <span data-i18n="srv2_l4">AI-searchable policy wiki</span></li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-emerald-500 shrink-0"></i> <span data-i18n="srv2_l5">Manager self-service guidance system</span></li>
+                    </ul>
+                    <div class="mt-8 p-4 bg-emerald-100/50 rounded-2xl border border-emerald-200 text-emerald-800 font-bold italic text-sm" data-i18n="srv2_pos">
+                        "Replace 'ask HR' culture with structured knowledge access."
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group p-10 rounded-[3rem] bg-cyan-50 border border-cyan-100 hover-bounce shadow-sm flex flex-col">
+                    <div class="w-16 h-16 bg-cyan-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-xl">
+                        <i data-lucide="workflow" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-black mb-4 text-cyan-950" data-i18n="srv3_title">HR Infrastructure & Workflow Design</h3>
+                    <p class="text-slate-600 text-lg mb-6 leading-relaxed" data-i18n="srv3_desc">
+                        Build a scalable HR backbone before you hire a full HR department.
+                    </p>
+                    <ul class="space-y-3 text-md font-semibold text-slate-800 flex-1">
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-cyan-500 shrink-0"></i> <span data-i18n="srv3_l1">HR role structure mapping</span></li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-cyan-500 shrink-0"></i> <span data-i18n="srv3_l2">Payroll + HR workflow integration</span></li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-cyan-500 shrink-0"></i> <span data-i18n="srv3_l3">Internal control framework</span></li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-cyan-500 shrink-0"></i> <span data-i18n="srv3_l4">Risk & compliance checkpoints</span></li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-cyan-500 shrink-0"></i> <span data-i18n="srv3_l5">Growth-stage HR roadmap</span></li>
+                    </ul>
+                </div>
+
             </div>
+        </div>
+    </section>
+
+    <!-- ④ How We Work -->
+    <section id="process" class="py-24 px-6 bg-slate-50">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-16" data-i18n="proc_title">Our 4-Step Payroll Control Framework</h2>
+            
+            <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Hidden on mobile, line connector for desktop -->
+                <div class="hidden md:block step-line"></div>
+                
+                <div class="relative z-10 bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col items-center">
+                    <div class="w-16 h-16 bg-slate-900 text-white rounded-full flex items-center justify-center font-black text-2xl mb-6 shadow-xl border-4 border-slate-50">1</div>
+                    <h4 class="font-bold text-xl text-slate-800" data-i18n="proc_s1">Audit Current Payroll Structure</h4>
+                </div>
+                <div class="relative z-10 bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col items-center">
+                    <div class="w-16 h-16 bg-slate-900 text-white rounded-full flex items-center justify-center font-black text-2xl mb-6 shadow-xl border-4 border-slate-50">2</div>
+                    <h4 class="font-bold text-xl text-slate-800" data-i18n="proc_s2">Risk & Compliance Assessment</h4>
+                </div>
+                <div class="relative z-10 bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col items-center">
+                    <div class="w-16 h-16 bg-slate-900 text-white rounded-full flex items-center justify-center font-black text-2xl mb-6 shadow-xl border-4 border-slate-50">3</div>
+                    <h4 class="font-bold text-xl text-slate-800" data-i18n="proc_s3">Platform Optimization</h4>
+                </div>
+                <div class="relative z-10 bg-indigo-600 p-8 rounded-[2.5rem] shadow-xl flex flex-col items-center transform scale-105">
+                    <div class="w-16 h-16 bg-yellow-300 text-indigo-900 rounded-full flex items-center justify-center font-black text-2xl mb-6 shadow-xl border-4 border-indigo-500">4</div>
+                    <h4 class="font-bold text-xl text-white" data-i18n="proc_s4">Ongoing Operator Support</h4>
+                </div>
+            </div>
+
+            <div class="mt-16 text-2xl font-black text-indigo-600 bg-indigo-50 inline-block px-10 py-5 rounded-full border border-indigo-100 shadow-sm" data-i18n="proc_concl">
+                We don’t replace your payroll software. We make it work correctly.
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑤ Ideal Clients & ⑥ Authority -->
+    <section class="py-24 px-6 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
+            
+            <!-- Who We Work With -->
+            <div>
+                <h2 class="text-4xl font-black text-slate-900 mb-8 flex items-center">
+                    <i data-lucide="target" class="w-8 h-8 mr-4 text-pink-500"></i> <span data-i18n="tgt_title">Who We Work With</span>
+                </h2>
+                <ul class="space-y-6">
+                    <li class="flex items-center bg-slate-50 p-4 rounded-2xl"><i data-lucide="check-square" class="text-emerald-500 mr-4 w-6 h-6"></i><span class="font-bold text-lg text-slate-700" data-i18n="tgt_l1">10–200 employee businesses</span></li>
+                    <li class="flex items-center bg-slate-50 p-4 rounded-2xl"><i data-lucide="check-square" class="text-emerald-500 mr-4 w-6 h-6"></i><span class="font-bold text-lg text-slate-700" data-i18n="tgt_l2">Multi-state operations</span></li>
+                    <li class="flex items-center bg-slate-50 p-4 rounded-2xl"><i data-lucide="check-square" class="text-emerald-500 mr-4 w-6 h-6"></i><span class="font-bold text-lg text-slate-700" data-i18n="tgt_l3">Companies already using ADP / Paychex / Gusto</span></li>
+                    <li class="flex items-center bg-slate-50 p-4 rounded-2xl"><i data-lucide="check-square" class="text-emerald-500 mr-4 w-6 h-6"></i><span class="font-bold text-lg text-slate-700" data-i18n="tgt_l4">Growing companies without a senior HR leader</span></li>
+                    <li class="flex items-center bg-slate-50 p-4 rounded-2xl"><i data-lucide="check-square" class="text-emerald-500 mr-4 w-6 h-6"></i><span class="font-bold text-lg text-slate-700" data-i18n="tgt_l5">Founders who want payroll risk minimized</span></li>
+                </ul>
+            </div>
+
+            <!-- Authority -->
+            <div>
+                <h2 class="text-4xl font-black text-slate-900 mb-8 flex items-center">
+                    <i data-lucide="award" class="w-8 h-8 mr-4 text-indigo-500"></i> <span data-i18n="auth_title">Authority & Expertise</span>
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="p-6 border-2 border-indigo-50 rounded-3xl text-center shadow-sm">
+                        <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="clock" class="w-6 h-6"></i></div>
+                        <h4 class="font-black text-slate-800 text-lg" data-i18n="auth_l1">8+ Years</h4>
+                        <p class="text-sm text-slate-500 font-semibold" data-i18n="auth_d1">Payroll Experience</p>
+                    </div>
+                    <div class="p-6 border-2 border-indigo-50 rounded-3xl text-center shadow-sm">
+                        <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="map" class="w-6 h-6"></i></div>
+                        <h4 class="font-black text-slate-800 text-lg" data-i18n="auth_l2">Multi-State</h4>
+                        <p class="text-sm text-slate-500 font-semibold" data-i18n="auth_d2">Compliance Exposure</p>
+                    </div>
+                    <div class="p-6 border-2 border-indigo-50 rounded-3xl text-center shadow-sm">
+                        <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="shield-check" class="w-6 h-6"></i></div>
+                        <h4 class="font-black text-slate-800 text-lg" data-i18n="auth_l3">Internal Controls</h4>
+                        <p class="text-sm text-slate-500 font-semibold" data-i18n="auth_d3">Operations Background</p>
+                    </div>
+                    <div class="p-6 border-2 border-indigo-50 rounded-3xl text-center shadow-sm">
+                        <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="languages" class="w-6 h-6"></i></div>
+                        <h4 class="font-black text-slate-800 text-lg" data-i18n="auth_l4">Bilingual</h4>
+                        <p class="text-sm text-slate-500 font-semibold" data-i18n="auth_d4">HR Support</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ⑦ Soft Expansion -->
+    <section class="py-12 bg-slate-100 text-center px-6">
+        <h4 class="text-sm font-black text-slate-400 uppercase tracking-widest mb-6" data-i18n="exp_title">Additional Capabilities (By Engagement Scope)</h4>
+        <div class="flex flex-wrap justify-center gap-4 text-slate-600 font-bold max-w-5xl mx-auto">
+            <span class="bg-white px-5 py-2 rounded-full shadow-sm border border-slate-200" data-i18n="exp_l1">Payroll system integration</span>
+            <span class="bg-white px-5 py-2 rounded-full shadow-sm border border-slate-200" data-i18n="exp_l2">Recruiting advisory</span>
+            <span class="bg-white px-5 py-2 rounded-full shadow-sm border border-slate-200" data-i18n="exp_l3">Remote operational outsourcing</span>
+            <span class="bg-white px-5 py-2 rounded-full shadow-sm border border-slate-200" data-i18n="exp_l4">HR org structure consulting</span>
+        </div>
+    </section>
+
+    <!-- ⑧ Final CTA -->
+    <section class="py-24 px-6 bg-slate-900 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-6xl font-black text-white mb-10 leading-tight" data-i18n="cta_title">
+                Payroll is not admin work. <br><span class="text-indigo-400">It’s risk management.</span>
+            </h2>
+            <a href="https://calendar.app.google/sZtzjvNQF5mQ5552A" target="_blank" class="inline-flex bg-white text-slate-900 px-12 py-6 rounded-full font-black text-2xl hover:scale-105 transition-transform shadow-[0_0_40px_rgba(255,255,255,0.2)] items-center">
+                <span data-i18n="cta_btn">Book a Strategy Call</span> <i data-lucide="arrow-right" class="ml-4 w-6 h-6"></i>
+            </a>
         </div>
     </section>
 
@@ -190,119 +365,177 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 text-white py-28 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-20">
-            <div class="space-y-8">
-                <div class="flex items-center space-x-3">
-                    <div class="w-12 h-12 bg-indigo-500 rounded-2xl flex items-center justify-center text-white font-black text-2xl shadow-lg shadow-indigo-500/30">C</div>
-                    <span class="text-3xl font-black tracking-tighter">Core People Ops</span>
-                </div>
-                <p class="text-slate-400 leading-relaxed text-xl font-medium" data-i18n="ft_slogan">
-                    Making compliance not just an obligation, but an ultimate employee experience.
-                </p>
+    <footer class="bg-slate-950 text-white pb-20 px-6 border-t border-slate-800 pt-16">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-slate-500 font-medium">
+            <div class="flex items-center space-x-3 mb-6 md:mb-0">
+                <div class="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center text-white font-black text-sm">C</div>
+                <span class="text-xl font-bold text-white">Core People Ops</span>
             </div>
-            <div>
-                <h4 class="text-2xl font-black mb-10 text-white tracking-tight" data-i18n="ft_quick">Quick Links</h4>
-                <div class="space-y-6 text-slate-400 text-lg">
-                    <p class="flex items-center hover:text-white transition-colors cursor-pointer"><i data-lucide="map-pin" class="mr-4 w-6 h-6 text-indigo-400"></i> Huntington Station, NY</p>
-                    <p class="flex items-center hover:text-white transition-colors cursor-pointer font-bold"><i data-lucide="mail" class="mr-4 w-6 h-6 text-indigo-400"></i> contact@corepeopleops.com</p>
-                </div>
+            <div data-i18n="ft_copy">
+                © 2026 Core People Operations LLC. All rights reserved.
             </div>
-            <div>
-                <h4 class="text-2xl font-black mb-10 text-white tracking-tight" data-i18n="ft_cred">Credentials</h4>
-                <ul class="text-slate-400 space-y-6 text-lg">
-                    <li class="flex items-center"><i data-lucide="shield-check" class="mr-4 w-6 h-6 text-emerald-400"></i> Professional Liability Insured</li>
-                    <li class="flex items-center"><i data-lucide="users" class="mr-4 w-6 h-6 text-emerald-400"></i> CPA & Legal Guidance</li>
-                </ul>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto mt-24 pt-10 border-t border-slate-800 text-center text-slate-500 text-lg" data-i18n="ft_copy">
-            © 2026 Core People Operations LLC. Bringing dopamine to work.
         </div>
     </footer>
 
     <script>
-        // --------------------------------------------------------
-        // i18n Translation Dictionary
-        // --------------------------------------------------------
-        let currentLang = 'en'; // Changed default to English
+        let currentLang = 'en';
 
         const i18n = {
             zh: {
-                nav_services: "服务项目",
-                nav_roadmap: "未来路线图",
-                nav_contact: "联系我们",
+                nav_problem: "当前痛点",
+                nav_services: "核心服务",
+                nav_process: "服务流程",
                 nav_book: "预约咨询",
-                hero_title: "HR with AI Optimization <br> <span class=\"text-yellow-300 italic\">可以是一种享受</span>",
-                hero_desc: "告别枯燥的手册和繁琐的对账。我们为小型团队提供最合规、最智能、最有生命力的 HR 运营体验。",
-                hero_btn_payroll: "解锁智能 Payroll",
-                srv_highlight: "Service Highlights",
-                srv_title: "核心服务魔法",
-                srv_pay_title: "智能薪酬管理",
-                srv_pay_desc: "基于 <b>Client Onboarding</b> 标准化流程，精准对账，告别税务风险。",
-                srv_pay_btn: "查看细则与定价",
-                srv_wiki_title: "AI 公司政策百科",
-                srv_wiki_desc: "使用 <b>SPU</b> 标准化定价。将繁琐的手册转化为 24/7 在线的 AI 合规专家。",
-                srv_wiki_btn: "查看架构方案",
-                btn_book: "<i data-lucide=\"calendar\" class=\"w-6 h-6 mr-2\"></i> Book Meeting",
-                vis_strategy: "Growth Strategy",
-                vis_title: "全链路 HR 幸福生态",
-                vis_desc: "点击下方业务板块，预览我们的战略蓝图与实施细节",
-                ft_slogan: "让合规不仅是义务，更是一种极致的员工体验。",
-                ft_quick: "快速连接",
-                ft_cred: "专业资质",
-                ft_copy: "© 2026 Core People Operations LLC. 让工作充满多巴胺。"
+                hero_title: "专注于成长型企业的 <br><span class=\"text-yellow-300 italic\">薪酬与 HR 风控咨询</span>",
+                hero_desc: "我们代管您的 ADP, Paychex 或 Gusto 平台，强化税务合规，并搭建可扩展的 HR 基础设施——让您的团队专注业务增长。",
+                hero_btn1: "<i data-lucide=\"phone-call\" class=\"mr-3 w-6 h-6\"></i> 预约薪酬战略会议",
+                hero_btn2: "<i data-lucide=\"settings\" class=\"mr-3 w-6 h-6\"></i> 查看代管模式详情",
+                prob_title: "您的薪酬平台真的在掌控之中吗？",
+                prob_li1: "频繁的薪资错误与重复核算",
+                prob_li2: "多州税法与合规要求混乱",
+                prob_li3: "年终 W-2 / 1099 纠错恐慌",
+                prob_li4: "HR 经理被行政琐事彻底淹没",
+                prob_li5: "缺乏结构化的政策说明与文档",
+                prob_li6: "内部没有任何薪酬审计流程",
+                prob_concl: "薪酬系统很少出错，出错的往往是管理方式。",
+                srv_label: "核心专注领域",
+                srv_title: "核心代管服务",
+                srv1_title: "薪酬平台托管管理",
+                srv1_desc: "我们像您的内部薪酬专家一样运作系统——但不产生全职员工的间接成本。",
+                srv1_l1: "ADP / Paychex / Gusto 系统深度管理",
+                srv1_l2: "跨州薪资税务与合规处理",
+                srv1_l3: "历史薪酬数据审计与清理",
+                srv1_l4: "1099 与 W-2 员工分类复核",
+                srv1_l5: "季度税务申报与年终处理支持",
+                srv1_l6: "建立内部薪酬风控制度",
+                srv1_btn: "了解我们的代管运作模式",
+                srv2_title: "HR 政策与知识基建",
+                srv2_desc: "结构化的 HR 文档，有效降低合规风险与员工困惑。",
+                srv2_l1: "员工手册 (Handbook) 起草与更新",
+                srv2_l2: "雇佣合规政策专项设计",
+                srv2_l3: "标准操作流程 (SOP) 撰写",
+                srv2_l4: "AI 驱动的政策检索引擎搭建",
+                srv2_l5: "管理者自助指引系统",
+                srv2_pos: "用“结构化知识库”取代低效的“问问 HR”文化。",
+                srv3_title: "HR 架构与流程设计",
+                srv3_desc: "在盲目扩招全职 HR 团队之前，先建好可扩展的骨干网络。",
+                srv3_l1: "HR 岗位架构与职责映射",
+                srv3_l2: "打通薪酬与 HR 审批工作流",
+                srv3_l3: "搭建内部风控与制衡框架",
+                srv3_l4: "设立风险与合规检查点",
+                srv3_l5: "定制成长型企业 HR 路线图",
+                proc_title: "四步薪酬风控模型",
+                proc_s1: "审计现有薪酬架构",
+                proc_s2: "评估风险与合规隐患",
+                proc_s3: "系统底层规则优化",
+                proc_s4: "长期的操作代管支持",
+                proc_concl: "我们不替换您的系统，我们让系统正确地工作。",
+                tgt_title: "我们的理想客户",
+                tgt_l1: "10-200 人的成长型企业",
+                tgt_l2: "存在跨州业务与多实体操作",
+                tgt_l3: "已在使用 ADP / Paychex / Gusto",
+                tgt_l4: "正在快速增长但缺乏资深 HR 负责人",
+                tgt_l5: "希望最大程度降低薪酬合规风险的创始人",
+                auth_title: "专业资质与背书",
+                auth_l1: "8+ 年",
+                auth_d1: "美国薪酬管理经验",
+                auth_l2: "全美多州",
+                auth_d2: "合规与税务处理经历",
+                auth_l3: "内部风控",
+                auth_d3: "运营与财务审计背景",
+                auth_l4: "双语沟通",
+                auth_d4: "中英 HR 深度支持",
+                exp_title: "其他扩展支持 (视合作范围而定)",
+                exp_l1: "HR 系统迁移与数据整合",
+                exp_l2: "核心岗位招聘策略咨询",
+                exp_l3: "远程团队海外合规外包",
+                exp_l4: "组织架构与薪酬结构咨询",
+                cta_title: "薪酬管理绝不是行政琐事。<br><span class=\"text-indigo-400\">它是核心的风险控制。</span>",
+                cta_btn: "预约您的薪酬战略会议",
+                ft_copy: "© 2026 Core People Operations LLC. 保留所有权利。"
             },
             en: {
-                nav_services: "Services",
-                nav_roadmap: "Roadmap",
-                nav_contact: "Contact",
+                nav_problem: "The Challenge",
+                nav_services: "Core Services",
+                nav_process: "How We Work",
                 nav_book: "Book Consult",
-                hero_title: "HR with AI Optimization <br> <span class=\"text-yellow-300 italic\">Can Be Joyful</span>",
-                hero_desc: "Say goodbye to boring manuals and tedious reconciliations. We provide compliant, smart, and vibrant HR operations for small teams.",
-                hero_btn_payroll: "Unlock Smart Payroll",
-                srv_highlight: "Service Highlights",
-                srv_title: "Core Services Magic",
-                srv_pay_title: "Smart Payroll",
-                srv_pay_desc: "Based on standardized <b>Onboarding</b> processes. Accurate reconciliation, zero tax risks.",
-                srv_pay_btn: "Details & Pricing",
-                srv_wiki_title: "AI Policy Wiki",
-                srv_wiki_desc: "Standardized <b>SPU</b> pricing. Transform manuals into 24/7 online AI compliance experts.",
-                srv_wiki_btn: "View Architecture",
-                btn_book: "<i data-lucide=\"calendar\" class=\"w-6 h-6 mr-2\"></i> Book Meeting",
-                vis_strategy: "Growth Strategy",
-                vis_title: "Full-Cycle HR Ecosystem",
-                vis_desc: "Click the sections below to preview our strategic blueprint.",
-                ft_slogan: "Making compliance not just an obligation, but an ultimate employee experience.",
-                ft_quick: "Quick Links",
-                ft_cred: "Credentials",
-                ft_copy: "© 2026 Core People Operations LLC. Bringing dopamine to work."
+                hero_title: "Payroll-Centered HR Consulting <br><span class=\"text-yellow-300 italic\">for Growing Businesses</span>",
+                hero_desc: "We manage your ADP, Paychex, or Gusto platform, strengthen compliance, and build a scalable HR foundation — so your team can focus on growth.",
+                hero_btn1: "<i data-lucide=\"phone-call\" class=\"mr-3 w-6 h-6\"></i> Book a Payroll Strategy Call",
+                hero_btn2: "<i data-lucide=\"settings\" class=\"mr-3 w-6 h-6\"></i> See How We Operate ADP",
+                prob_title: "Is Your Payroll Platform Really Under Control?",
+                prob_li1: "Payroll errors and reprocessing",
+                prob_li2: "Multi-state compliance confusion",
+                prob_li3: "Year-end panic (W-2 / 1099 corrections)",
+                prob_li4: "HR manager overloaded with admin",
+                prob_li5: "No structured policy documentation",
+                prob_li6: "No internal payroll audit process",
+                prob_concl: "Payroll systems don’t fail. Poor management does.",
+                srv_label: "Focus Areas",
+                srv_title: "Core Services",
+                srv1_title: "Payroll Platform Management",
+                srv1_desc: "We operate your payroll system like an internal specialist — without the overhead.",
+                srv1_l1: "ADP / Paychex / Gusto administration",
+                srv1_l2: "Multi-state payroll management",
+                srv1_l3: "Payroll audit & cleanup",
+                srv1_l4: "1099 / W-2 classification review",
+                srv1_l5: "Quarterly filings support & Year-end processing",
+                srv1_l6: "Internal payroll controls",
+                srv1_btn: "Learn How Our Operator Model Works",
+                srv2_title: "HR Policy & Knowledge Infrastructure",
+                srv2_desc: "Structured HR documentation that reduces risk and confusion.",
+                srv2_l1: "Employee handbook drafting",
+                srv2_l2: "Compliance policy design",
+                srv2_l3: "SOP documentation",
+                srv2_l4: "AI-searchable policy wiki",
+                srv2_l5: "Manager self-service guidance system",
+                srv2_pos: "\"Replace 'ask HR' culture with structured knowledge access.\"",
+                srv3_title: "HR Infrastructure & Workflow Design",
+                srv3_desc: "Build a scalable HR backbone before you hire a full HR department.",
+                srv3_l1: "HR role structure mapping",
+                srv3_l2: "Payroll + HR workflow integration",
+                srv3_l3: "Internal control framework",
+                srv3_l4: "Risk & compliance checkpoints",
+                srv3_l5: "Growth-stage HR roadmap",
+                proc_title: "Our 4-Step Payroll Control Framework",
+                proc_s1: "Audit Current Payroll Structure",
+                proc_s2: "Risk & Compliance Assessment",
+                proc_s3: "Platform Optimization",
+                proc_s4: "Ongoing Operator Support",
+                proc_concl: "We don’t replace your payroll software. We make it work correctly.",
+                tgt_title: "Who We Work With",
+                tgt_l1: "10–200 employee businesses",
+                tgt_l2: "Multi-state operations",
+                tgt_l3: "Companies already using ADP / Paychex / Gusto",
+                tgt_l4: "Growing companies without a senior HR leader",
+                tgt_l5: "Founders who want payroll risk minimized",
+                auth_title: "Authority & Expertise",
+                auth_l1: "8+ Years",
+                auth_d1: "Payroll Experience",
+                auth_l2: "Multi-State",
+                auth_d2: "Compliance Exposure",
+                auth_l3: "Internal Controls",
+                auth_d3: "Operations Background",
+                auth_l4: "Bilingual",
+                auth_d4: "HR Support",
+                exp_title: "Additional Capabilities (By Engagement Scope)",
+                exp_l1: "Payroll system integration",
+                exp_l2: "Recruiting advisory",
+                exp_l3: "Remote operational outsourcing",
+                exp_l4: "HR org structure consulting",
+                cta_title: "Payroll is not admin work. <br><span class=\"text-indigo-400\">It’s risk management.</span>",
+                cta_btn: "Book a Strategy Call",
+                ft_copy: "© 2026 Core People Operations LLC. All rights reserved."
             }
         };
-
-        const roadmapData = [
-            { id: 1, title: "HR & Payroll Consulting", title_en: "HR & Payroll Consulting", color: "blue", status: "Active", status_en: "Active", desc: "核心咨询业务，专注于 HR 流程优化与薪酬架构搭建。", desc_en: "Core consulting focusing on HR process optimization and payroll architecture." },
-            { id: 2, title: "Cross-Border Talent", title_en: "Cross-Border Talent", color: "orange", status: "Coming Soon", status_en: "Coming Soon", desc: "跨国人才招聘与全球雇佣 (EOR) 解决方案。", desc_en: "Cross-border recruitment and Employer of Record (EOR) solutions." },
-            { id: 3, title: "Software Implementation", title_en: "Software Implementation", color: "emerald", status: "Active", status_en: "Active", desc: "深度实施 ADP, Gusto, Rippling, Paychex 系统，确保 100% 流程顺滑。", desc_en: "Deep implementation of ADP, Gusto, Rippling, Paychex systems ensuring 100% smooth processes." },
-            { id: 4, title: "Immigration Compliance", title_en: "Immigration Compliance", color: "purple", status: "Planned", status_en: "Planned", desc: "外籍员工签证合规及 I-9 审核全生命周期管理。", desc_en: "Full lifecycle management of visa compliance and I-9 audits for foreign employees." },
-            { id: 5, title: "Training & Culture", title_en: "Training & Culture", color: "pink", status: "Coming Soon", status_en: "Coming Soon", desc: "多巴胺风格的企业文化内训，提升团队凝聚力与幸福感。", desc_en: "Dopamine-style corporate culture training to enhance team cohesion and happiness." },
-            { id: 6, title: "Bilingual HR Hub", title_en: "Bilingual HR Hub", color: "indigo", status: "Coming Soon", status_en: "Coming Soon", desc: "针对中英双语企业的定制化运营支持与沟通枢纽。", desc_en: "Customized operations support and communication hub for bilingual companies." },
-            { id: 7, title: "Chamber Program", title_en: "Chamber Program", color: "yellow", status: "Planned", status_en: "Planned", desc: "与各地商会深度联动，为会员提供普惠式合规服务。", desc_en: "Deep linkage with local chambers of commerce to provide inclusive compliance services." },
-            { id: 8, title: "HR + Accounting Hybrid", title_en: "HR + Accounting Hybrid", color: "slate", status: "Planned", status_en: "Planned", desc: "打通财务与 HR 的数据壁垒，实现精细化成本控制。", desc_en: "Break data barriers between finance and HR to achieve refined cost control." }
-        ];
-
-        let currentModalType = null;
-        let currentModalId = null;
 
         function setLanguage(lang) {
             currentLang = lang;
             const isEn = lang === 'en';
             
-            // Toggle Button Label (shows the language you switch TO)
             document.getElementById('lang-label').innerText = isEn ? '中' : 'EN';
-            document.title = isEn ? "Core People Operations | HR With Vitality" : "Core People Operations | 让 HR 更有活力";
+            document.title = isEn ? "Core People Operations | Payroll-Centered HR" : "Core People Operations | 核心薪酬与 HR 咨询";
 
-            // Translate static elements
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (i18n[lang][key]) {
@@ -310,15 +543,10 @@
                 }
             });
 
-            // Re-render dynamic elements
-            renderRoadmap();
-
-            // Refresh open modal if any
             if (document.body.classList.contains('modal-active')) {
-                openModal(currentModalType, currentModalId);
+                openModal('payroll');
             }
 
-            // Re-initialize icons as innerHTML replacements remove SVG tags
             lucide.createIcons();
         }
 
@@ -326,211 +554,54 @@
             setLanguage(currentLang === 'zh' ? 'en' : 'zh');
         }
 
-        function renderRoadmap() {
-            const grid = document.getElementById('roadmap-grid');
-            grid.innerHTML = '';
-            const isEn = currentLang === 'en';
-            roadmapData.forEach(item => {
-                const div = document.createElement('div');
-                div.className = `p-10 glass-card rounded-[3rem] hover-bounce text-center shadow-sm group border border-slate-100`;
-                div.onclick = () => openModal('roadmap', item.id);
-                div.innerHTML = `
-                    <div class="w-16 h-16 bg-${item.color}-100 text-${item.color}-600 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all shadow-inner font-black text-2xl">
-                        ${item.id}
-                    </div>
-                    <p class="font-black text-lg leading-tight text-slate-800">${isEn ? item.title_en : item.title}</p>
-                `;
-                grid.appendChild(div);
-            });
-        }
-
-        // Initialize grid
-        renderRoadmap();
-        lucide.createIcons();
-
-        // --------------------------------------------------------
-        // Modal Logic
-        // --------------------------------------------------------
-        function openModal(type, id = null) {
-            currentModalType = type;
-            currentModalId = id;
+        function openModal(type) {
             const body = document.getElementById('modal-body');
             const container = document.body;
             const isEn = currentLang === 'en';
-            let content = '';
-
+            
             if (type === 'payroll') {
-                content = `
+                body.innerHTML = `
                     <div class="flex flex-col md:flex-row md:items-center space-y-6 md:space-y-0 md:space-x-8 mb-14">
                         <div class="w-24 h-24 bg-indigo-600 rounded-[2rem] flex items-center justify-center text-white shadow-2xl">
-                            <i data-lucide="wallet" class="w-12 h-12"></i>
+                            <i data-lucide="settings-2" class="w-12 h-12"></i>
                         </div>
                         <div>
-                            <h2 class="text-5xl font-black text-indigo-950 tracking-tighter">${isEn ? "Smart Payroll Services" : "智能薪酬服务方案"}</h2>
-                            <p class="text-indigo-600 font-bold mt-2 text-xl">${isEn ? "Deep service based on compliance first and professional reconciliation." : "基于合规优先与专业对账的深度服务"}</p>
+                            <h2 class="text-5xl font-black text-indigo-950 tracking-tighter">${isEn ? "The Operator Model" : "平台托管运作模式"}</h2>
+                            <p class="text-indigo-600 font-bold mt-2 text-xl">${isEn ? "Deep platform administration. Zero compromises on compliance." : "深度平台管理，合规零妥协"}</p>
                         </div>
                     </div>
                     
-                    <div class="grid lg:grid-cols-2 gap-16">
-                        <div class="space-y-12">
-                            <section>
-                                <h3 class="text-2xl font-black text-slate-900 mb-6 flex items-center">
-                                    <span class="w-2 h-8 bg-indigo-600 rounded-full mr-4"></span>${isEn ? "Service Scope" : "服务范围 (Scope)"}
-                                </h3>
-                                <ul class="space-y-5 text-slate-700 text-lg">
-                                    <li class="flex items-start"><i data-lucide="check" class="text-emerald-500 mr-4 mt-1 w-6 h-6"></i><span>${isEn ? "<b>Calc & Issuance:</b> Includes Salary Change, Bonus, Commission." : "<b>Payroll 计算与发薪：</b>包含 Salary Change, Bonus, Commission 核算。"}</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="text-emerald-500 mr-4 mt-1 w-6 h-6"></i><span>${isEn ? "<b>Deductions:</b> Health Insurance, 401(k) deductions & employer matching." : "<b>Deductions 维护：</b>Health Insurance, 401(k) 扣款与雇主比例配置。"}</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="text-emerald-500 mr-4 mt-1 w-6 h-6"></i><span>${isEn ? "<b>Compliance:</b> Federal + 1 State (e.g., CA daily OT) tax reconciliation." : "<b>合规复核：</b>联邦 + 1 个州 (加州按天 OT 规则) 的税务对账。"}</span></li>
-                                    <li class="flex items-start"><i data-lucide="check" class="text-emerald-500 mr-4 mt-1 w-6 h-6"></i><span>${isEn ? "<b>Data Handover:</b> Clear cutoff times to ensure accurate issuance." : "<b>数据交接：</b>建立明确的 Cutoff 时间，确保发放准确性。"}</span></li>
-                                </ul>
-                            </section>
-                            
-                            <section class="p-8 bg-indigo-950 text-white rounded-[3rem] shadow-2xl">
-                                <h3 class="text-xl font-bold mb-4 flex items-center text-yellow-300">
-                                    <i data-lucide="alert-triangle" class="mr-3"></i> ${isEn ? "Software Complexity Support" : "软件复杂性支持"}
+                    <div class="space-y-10">
+                        <section>
+                            <h3 class="text-2xl font-black text-slate-900 mb-6 flex items-center">
+                                <span class="w-2 h-8 bg-indigo-600 rounded-full mr-4"></span>${isEn ? "How We Integrate With Your System" : "我们如何与您的系统集成"}
+                            </h3>
+                            <ul class="space-y-5 text-slate-700 text-lg">
+                                <li class="flex items-start"><i data-lucide="check" class="text-emerald-500 mr-4 mt-1 w-6 h-6"></i><span>${isEn ? "<b>Admin Access:</b> We log in as practitioners to your ADP, Paychex, or Gusto account." : "<b>管理员权限接入：</b>我们作为超级管理员安全登入您的 ADP / Paychex / Gusto 平台。"}</span></li>
+                                <li class="flex items-start"><i data-lucide="check" class="text-emerald-500 mr-4 mt-1 w-6 h-6"></i><span><b>Data Governance:</b> We establish strict cut-off times and data flow SOPs so hours and adjustments are never missed." : "<b>数据治理机制：</b>设立严格的数据截止时间与工时收集标准流程，杜绝数据遗漏。"}</span></li>
+                                <li class="flex items-start"><i data-lucide="check" class="text-emerald-500 mr-4 mt-1 w-6 h-6"></i><span>${isEn ? "<b>Reconciliation:</b> We balance gross-to-net before execution, ensuring taxes match exactly." : "<b>发薪前核账：</b>在正式打款前执行毛收入到净收入 (Gross-to-Net) 的严密对账。"}</span></li>
+                            </ul>
+                        </section>
+                        
+                        <section class="p-8 bg-indigo-950 text-white rounded-[3rem] shadow-2xl flex flex-col md:flex-row gap-8 items-center">
+                            <div class="flex-1">
+                                <h3 class="text-2xl font-bold mb-4 flex items-center text-yellow-300">
+                                    <i data-lucide="shield-check" class="mr-3 w-8 h-8"></i> ${isEn ? "Our Commitment to Risk Control" : "我们对风险控制的承诺"}
                                 </h3>
                                 <p class="text-indigo-200 text-lg leading-relaxed">
-                                    ${isEn ? "Deep experience with <b>ADP</b> complex Earnings/Deduction Codes. We manage Admin operations but do not directly contact third-party vendors." : "针对 <b>ADP</b> 的复杂 Earnings/Deduction Code 我们拥有深度处理经验。我们将获取 Admin Access 代为执行行政操作，但不直接对接第三方保险 Vendor。"}
+                                    ${isEn ? "We do not merely click 'run payroll'. We audit configurations, correct multi-state setups, and manage the complex earning codes that general bookkeepers avoid." : "我们绝不是在后台无脑点击'发工资'按钮。我们致力于审计底层配置，修复跨州税务错误，并接管普通财务人员唯恐避之不及的复杂薪酬代码。"}
                                 </p>
-                            </section>
-                        </div>
-
-                        <div class="space-y-10">
-                            <section>
-                                <h3 class="text-2xl font-black text-slate-900 mb-6">${isEn ? "Transparent Pricing" : "透明定价计划 (Pricing)"}</h3>
-                                <div class="bg-white rounded-[3rem] border border-slate-100 shadow-xl overflow-hidden">
-                                    <div class="bg-indigo-600 p-6 text-white font-bold text-xl flex justify-between">
-                                        <span>${isEn ? "Team Size" : "团队人数规模"}</span>
-                                        <span>${isEn ? "Monthly Fee" : "月度服务费"}</span>
-                                    </div>
-                                    <div class="p-8 space-y-6 text-lg font-bold">
-                                        <div class="flex justify-between border-b pb-4"><span>${isEn ? "1 - 10 Employees" : "1 - 10 员工"}</span> <span class="text-indigo-600">$180 – $350</span></div>
-                                        <div class="flex justify-between border-b pb-4"><span>${isEn ? "20 - 50 Employees" : "20 - 50 员工"}</span> <span class="text-indigo-600">$550 – $1,200</span></div>
-                                        <div class="flex justify-between border-b pb-4"><span>${isEn ? "50 - 100 Employees" : "50 - 100 员工"}</span> <span class="text-indigo-600">$1,200 – $2,800</span></div>
-                                        <div class="flex justify-between"><span>${isEn ? "100 - 200 Employees" : "100 - 200 员工"}</span> <span class="text-indigo-600">$2,800 – $6,000</span></div>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section class="p-8 bg-emerald-50 rounded-[3rem] border border-emerald-100">
-                                <h4 class="font-black text-emerald-900 mb-3">${isEn ? "✅ Add-ons" : "✅ Add-on 增值项"}</h4>
-                                <ul class="text-emerald-800 space-y-2 font-medium">
-                                    <li>${isEn ? "• Multi-state: $75 - $200 /state/mo" : "• 多州发薪: $75 - $200 /州/月"}</li>
-                                    <li>${isEn ? "• 1099 Processing: $10 - $25 /person/mo" : "• 1099 处理: $10 - $25 /人/月"}</li>
-                                    <li>${isEn ? "• Rush Processing (e.g., CA Final Pay): Extra fee" : "• 紧急处理 (如加州 Final Pay): 额外加急费"}</li>
-                                </ul>
-                            </section>
-                        </div>
-                    </div>
-                `;
-            } else if (type === 'wiki') {
-                content = `
-                    <div class="flex flex-col md:flex-row md:items-center space-y-6 md:space-y-0 md:space-x-8 mb-14">
-                        <div class="w-24 h-24 bg-emerald-600 rounded-[2rem] flex items-center justify-center text-white shadow-2xl">
-                            <i data-lucide="brain" class="w-12 h-12"></i>
-                        </div>
-                        <div>
-                            <h2 class="text-5xl font-black text-emerald-950 tracking-tighter">${isEn ? "AI Policy Wiki System" : "AI 政策百科系统"}</h2>
-                            <p class="text-emerald-600 font-bold mt-2 text-xl">${isEn ? "Knowledge management based on SPU standardized pricing." : "基于 SPU 标准化定价的知识管理"}</p>
-                        </div>
-                    </div>
-
-                    <div class="grid lg:grid-cols-2 gap-16">
-                        <div class="space-y-8">
-                            <h3 class="text-2xl font-black text-slate-900 mb-6">${isEn ? "Governance Levels & Fees" : "治理分级与费用 (Levels)"}</h3>
-                            <div class="space-y-6">
-                                <div class="p-8 bg-emerald-50 rounded-[2.5rem] border border-emerald-100">
-                                    <div class="flex justify-between items-center mb-3">
-                                        <span class="font-black text-emerald-800 text-xl italic">${isEn ? "Level 1 - Foundational" : "Level 1 - 基础级"}</span>
-                                        <span class="text-emerald-600 font-black">$1.8K - $2.8K</span>
-                                    </div>
-                                    <p class="text-slate-600">${isEn ? "≤ 30 docs. Naming, versions, basic folder structure." : "≤ 30份文档。解决命名、版本、基础文件夹结构。"}</p>
-                                </div>
-                                <div class="p-8 bg-indigo-50 rounded-[2.5rem] border border-indigo-100">
-                                    <div class="flex justify-between items-center mb-3">
-                                        <span class="font-black text-indigo-800 text-xl italic">${isEn ? "Level 2 - Framework" : "Level 2 - 框架级"}</span>
-                                        <span class="text-indigo-600 font-black">$3.5K - $6.0K</span>
-                                    </div>
-                                    <p class="text-slate-600">${isEn ? "30-80 docs. Compliance tags, FAQ mapping, access control." : "30-80份文档。包含合规标签、FAQ 映射、权限隔离。"}</p>
-                                </div>
-                                <div class="p-8 bg-slate-900 text-white rounded-[2.5rem] shadow-2xl">
-                                    <div class="flex justify-between items-center mb-3">
-                                        <span class="font-black text-white text-xl italic underline decoration-yellow-400">${isEn ? "Level 3 - Enterprise" : "Level 3 - 企业级"}</span>
-                                        <span class="text-yellow-400 font-black">$7.0K - $11.0K</span>
-                                    </div>
-                                    <p class="text-slate-300 text-sm italic">${isEn ? "Multi-state architecture, cross-references, audit-ready. For complex teams." : "多州合规架构、跨政策引用、审计就绪。适合复杂跨国团队。"}</p>
-                                </div>
                             </div>
-                        </div>
-
-                        <div class="space-y-12">
-                            <section class="p-10 glass-card rounded-[3.5rem] border-2 border-dashed border-emerald-200">
-                                <h3 class="text-2xl font-black text-emerald-900 mb-4 italic">${isEn ? "What is SPU Pricing?" : "什么是 SPU 定价？"}</h3>
-                                <p class="text-slate-600 leading-relaxed text-lg mb-6">
-                                    ${isEn ? "<b>1 SPU (Standard Policy Unit)</b> ≈ 3 pages (approx. 1200 words)." : "<b>1 SPU (Standard Policy Unit)</b> ≈ 3页文档 (约1200字)。"}
-                                </p>
-                                <div class="bg-white/50 p-6 rounded-2xl text-slate-700 font-medium">
-                                    <p>• 10-25 SPU: $2K - $3.5K</p>
-                                    <p>• 25-60 SPU: $4K - $7K</p>
-                                    <p>• 60-120 SPU: $8K - $12K</p>
-                                </div>
-                            </section>
-                            
-                            <section>
-                                <h3 class="text-2xl font-black text-slate-900 mb-6">${isEn ? "Implementation Includes" : "实施模块包含"}</h3>
-                                <div class="grid grid-cols-2 gap-4 text-sm font-bold">
-                                    <div class="p-4 bg-slate-100 rounded-2xl">${isEn ? "Env Setup & Integration" : "环境配置与集成"}</div>
-                                    <div class="p-4 bg-slate-100 rounded-2xl">${isEn ? "3-Tier Access Design" : "三级权限设计"}</div>
-                                    <div class="p-4 bg-slate-100 rounded-2xl">${isEn ? "Sensitive Data Isolation" : "敏感内容隔离"}</div>
-                                    <div class="p-4 bg-slate-100 rounded-2xl">${isEn ? "Admin Training" : "管理员实操培训"}</div>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                `;
-            } else if (type === 'roadmap' && id) {
-                const item = roadmapData.find(d => d.id === id);
-                content = `
-                    <div class="w-24 h-24 bg-${item.color}-600 rounded-[2.5rem] flex items-center justify-center text-white mb-10 shadow-2xl">
-                        <span class="text-4xl font-black">${item.id}</span>
-                    </div>
-                    <h2 class="text-5xl font-black mb-8 text-slate-900 tracking-tighter">${isEn ? item.title_en : item.title}</h2>
-                    <p class="text-slate-600 text-2xl leading-relaxed mb-14 font-medium">${isEn ? item.desc_en : item.desc}</p>
-                    <div class="py-5 px-10 bg-${item.color}-100 rounded-full inline-block">
-                        <p class="text-${item.color}-700 font-black text-xl flex items-center uppercase tracking-widest">
-                            <i data-lucide="rocket" class="mr-4 w-7 h-7"></i> ${isEn ? "Status" : "状态"}：${isEn ? item.status_en : item.status}
-                        </p>
-                    </div>
-                `;
-            } else if (type === 'contact') {
-                content = `
-                    <div class="text-center">
-                        <div class="w-20 h-20 bg-indigo-600 rounded-full flex items-center justify-center text-white mx-auto mb-8 shadow-xl">
-                            <i data-lucide="send" class="w-10 h-10"></i>
-                        </div>
-                        <h2 class="text-5xl font-black text-indigo-950 mb-4 tracking-tighter">${isEn ? "Start Happy HR Transformation" : "开启幸福 HR 转型"}</h2>
-                        <p class="text-slate-500 text-xl mb-12">${isEn ? "Select a service below for a free consultation." : "请选择您感兴趣的服务，我们将尽快为您安排一次免费咨询"}</p>
-                        
-                        <div class="grid md:grid-cols-2 gap-8 text-left max-w-2xl mx-auto">
-                            <a href="https://calendar.app.google/sZtzjvNQF5mQ5552A" target="_blank" class="block p-8 border-2 border-indigo-100 rounded-[2.5rem] hover:bg-indigo-50 cursor-pointer transition-colors hover:-translate-y-1 transform duration-200">
-                                <h4 class="font-black text-xl mb-2 text-indigo-600 flex items-center"><i data-lucide="calendar" class="w-5 h-5 mr-2"></i> ${isEn ? "Payroll Diagnostic" : "Payroll 诊断"}</h4>
-                                <p class="text-slate-500 text-sm leading-relaxed">${isEn ? "Comprehensive compliance health check on your existing payroll process." : "对现有的薪酬流程进行一次全面的合规性体检。"}</p>
-                            </a>
-                            <a href="https://calendar.app.google/sZtzjvNQF5mQ5552A" target="_blank" class="block p-8 border-2 border-emerald-100 rounded-[2.5rem] hover:bg-emerald-50 cursor-pointer transition-colors hover:-translate-y-1 transform duration-200">
-                                <h4 class="font-black text-xl mb-2 text-emerald-600 flex items-center"><i data-lucide="calendar" class="w-5 h-5 mr-2"></i> ${isEn ? "AI Wiki Deployment" : "AI Wiki 部署"}</h4>
-                                <p class="text-slate-500 text-sm leading-relaxed">${isEn ? "Learn how to turn your scattered docs into a smart AI system." : "了解如何将您的离散文档转化为智能 AI 系统。"}</p>
-                            </a>
-                        </div>
-                        
-                        <div class="mt-16 text-slate-400 font-bold">
-                            ${isEn ? "Or email us directly:" : "或直接发送邮件至："}<br>
-                            <a href="mailto:contact@corepeopleops.com" target="_blank" class="inline-block mt-2 text-indigo-600 text-2xl underline hover:text-indigo-800 transition-colors">contact@corepeopleops.com</a>
-                        </div>
+                            <div class="shrink-0">
+                                <a href="https://calendar.app.google/sZtzjvNQF5mQ5552A" target="_blank" class="bg-white text-indigo-900 px-8 py-4 rounded-full font-bold hover:bg-yellow-300 transition shadow-lg inline-block">
+                                    ${isEn ? "Book a Strategy Call" : "立即预约战略沟通"}
+                                </a>
+                            </div>
+                        </section>
                     </div>
                 `;
             }
 
-            body.innerHTML = content;
             lucide.createIcons();
             container.classList.add('modal-active');
         }
@@ -555,6 +626,8 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeModal();
         });
+
+        lucide.createIcons();
     </script>
 </body>
 </html>
