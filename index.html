@@ -66,10 +66,10 @@
         
         .step-line {
             position: absolute;
-            top: 24px;
-            left: 50%;
-            width: 100%;
-            height: 2px;
+            top: 32px;
+            left: 10%;
+            width: 80%;
+            height: 3px;
             background: #e2e8f0;
             z-index: -1;
         }
@@ -109,14 +109,14 @@
                 Payroll-Centered HR Consulting <br><span class="text-yellow-300 italic">for Growing Businesses</span>
             </h1>
             <p class="text-xl md:text-2xl opacity-90 max-w-4xl mx-auto mb-14 font-medium leading-relaxed" data-i18n="hero_desc">
-                We manage your ADP, Paychex, or Gusto platform, strengthen compliance, and build a scalable HR foundation — so your team can focus on growth.
+                We manage your ADP, Paychex, or Gusto platform, strengthen compliance controls, and build structured HR infrastructure — so payroll runs accurately, consistently, and without disruption.
             </p>
             <div class="flex flex-col md:flex-row justify-center items-center space-y-5 md:space-y-0 md:space-x-8">
-                <a href="https://calendar.app.google/sZtzjvNQF5mQ5552A" target="_blank" class="bg-white text-indigo-600 px-12 py-5 rounded-[2rem] font-extrabold text-xl shadow-2xl hover:bg-slate-50 transition transform hover:-translate-y-1 flex items-center" data-i18n="hero_btn1">
+                <a href="https://calendar.app.google/sZtzjvNQF5mQ5552A" target="_blank" class="bg-white text-indigo-600 px-10 py-5 rounded-[2rem] font-extrabold text-xl shadow-2xl hover:bg-slate-50 transition transform hover:-translate-y-1 flex items-center" data-i18n="hero_btn1">
                     <i data-lucide="phone-call" class="mr-3 w-6 h-6"></i> Book a Payroll Strategy Call
                 </a>
-                <button onclick="openModal('payroll')" class="bg-indigo-900/40 border-2 border-white/30 backdrop-blur-md text-white px-12 py-5 rounded-[2rem] font-extrabold text-xl hover:bg-white/20 transition transform hover:-translate-y-1 flex items-center" data-i18n="hero_btn2">
-                    <i data-lucide="settings" class="mr-3 w-6 h-6"></i> See How We Operate ADP
+                <button onclick="openModal('payroll')" class="bg-indigo-900/40 border-2 border-white/30 backdrop-blur-md text-white px-10 py-5 rounded-[2rem] font-extrabold text-xl hover:bg-white/20 transition transform hover:-translate-y-1 flex items-center" data-i18n="hero_btn2">
+                    <i data-lucide="settings" class="mr-3 w-6 h-6"></i> See How Our Operator Model Works
                 </button>
             </div>
         </div>
@@ -127,40 +127,41 @@
     <!-- ② Problem Section -->
     <section id="problem" class="py-24 px-6 bg-rose-50/50">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-black text-slate-900" data-i18n="prob_title">Is Your Payroll Platform Really Under Control?</h2>
+            <div class="text-center mb-6">
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-4" data-i18n="prob_title">Is Your Payroll Platform Really Under Control?</h2>
+                <p class="text-xl text-slate-600 font-medium max-w-3xl mx-auto" data-i18n="prob_sub">Many growing companies invest in strong payroll platforms — but lack internal expertise to manage them properly.</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16 mt-12">
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-rose-100 flex items-start space-x-4">
                     <div class="bg-rose-100 p-3 rounded-xl text-rose-600 shrink-0"><i data-lucide="alert-circle" class="w-6 h-6"></i></div>
-                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li1">Payroll errors and reprocessing</p>
+                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li1">Payroll errors and off-cycle corrections</p>
                 </div>
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-rose-100 flex items-start space-x-4">
                     <div class="bg-rose-100 p-3 rounded-xl text-rose-600 shrink-0"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
-                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li2">Multi-state compliance confusion</p>
+                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li2">Multi-state compliance exposure</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-rose-100 flex items-start space-x-4">
+                    <div class="bg-rose-100 p-3 rounded-xl text-rose-600 shrink-0"><i data-lucide="users-2" class="w-6 h-6"></i></div>
+                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li3">Misclassification of 1099 vs W-2 workers</p>
                 </div>
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-rose-100 flex items-start space-x-4">
                     <div class="bg-rose-100 p-3 rounded-xl text-rose-600 shrink-0"><i data-lucide="calendar-off" class="w-6 h-6"></i></div>
-                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li3">Year-end panic (W-2 / 1099 corrections)</p>
+                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li4">Year-end filing stress (W-2, 1099, 941 reconciliation)</p>
                 </div>
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-rose-100 flex items-start space-x-4">
                     <div class="bg-rose-100 p-3 rounded-xl text-rose-600 shrink-0"><i data-lucide="user-minus" class="w-6 h-6"></i></div>
-                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li4">HR manager overloaded with admin</p>
-                </div>
-                <div class="bg-white p-6 rounded-3xl shadow-sm border border-rose-100 flex items-start space-x-4">
-                    <div class="bg-rose-100 p-3 rounded-xl text-rose-600 shrink-0"><i data-lucide="file-x" class="w-6 h-6"></i></div>
-                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li5">No structured policy documentation</p>
+                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li5">HR managers overloaded with administrative tasks</p>
                 </div>
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-rose-100 flex items-start space-x-4">
                     <div class="bg-rose-100 p-3 rounded-xl text-rose-600 shrink-0"><i data-lucide="shield-alert" class="w-6 h-6"></i></div>
-                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li6">No internal payroll audit process</p>
+                    <p class="font-bold text-slate-700 text-lg pt-1" data-i18n="prob_li6">No documented payroll workflow or internal control structure</p>
                 </div>
             </div>
 
             <div class="text-center">
-                <div class="inline-block bg-rose-600 text-white px-8 py-4 rounded-full font-black text-xl md:text-2xl shadow-xl transform -rotate-1">
-                    <span data-i18n="prob_concl">Payroll systems don’t fail. Poor management does.</span>
+                <div class="inline-block bg-rose-600 text-white px-10 py-5 rounded-full font-black text-xl md:text-2xl shadow-xl transform -rotate-1">
+                    <span data-i18n="prob_concl">Payroll systems rarely fail. Operational oversight does.</span>
                 </div>
             </div>
         </div>
@@ -169,185 +170,213 @@
     <!-- ③ Core Services -->
     <section id="services" class="py-28 px-6 bg-white relative">
         <div class="max-w-7xl mx-auto">
-            <div class="mb-16">
-                <span class="text-indigo-600 font-extrabold tracking-[0.2em] uppercase text-xs px-5 py-2 bg-indigo-50 rounded-full mb-6 inline-block" data-i18n="srv_label">Focus Areas</span>
-                <h2 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight" data-i18n="srv_title">Core Services</h2>
+            <div class="mb-16 text-center">
+                <span class="text-indigo-600 font-extrabold tracking-[0.2em] uppercase text-xs px-5 py-2 bg-indigo-50 rounded-full mb-6 inline-block" data-i18n="srv_label">What We Do</span>
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-4" data-i18n="srv_title">We Operate Your Payroll Platform — Professionally and Proactively</h2>
+                <p class="text-xl text-slate-600 font-medium" data-i18n="srv_sub">We do not replace your payroll software. <span class="font-bold text-indigo-600">We ensure it is managed correctly.</span></p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 
-                <!-- Main Service (60% Weight) -> Full Width on desktop using col-span-2 -->
-                <div class="md:col-span-2 group p-10 md:p-14 rounded-[3rem] bg-indigo-50 border border-indigo-100 hover-bounce shadow-sm flex flex-col md:flex-row gap-10 items-center">
+                <!-- Main Service (60% Weight) -> Full Width on large screens -->
+                <div class="lg:col-span-2 group p-10 md:p-14 rounded-[3rem] bg-indigo-50 border border-indigo-100 hover-bounce shadow-sm flex flex-col md:flex-row gap-10 items-center">
                     <div class="flex-1">
-                        <div class="w-20 h-20 bg-indigo-600 rounded-3xl flex items-center justify-center text-white mb-8 shadow-xl group-hover:scale-110 transition-transform">
-                            <i data-lucide="monitor-cog" class="w-10 h-10"></i>
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform">
+                                <span class="font-black text-2xl">1</span>
+                            </div>
+                            <h3 class="text-3xl md:text-4xl font-black text-indigo-950" data-i18n="srv1_title">Payroll Platform Management</h3>
                         </div>
-                        <h3 class="text-4xl font-black mb-4 text-indigo-950" data-i18n="srv1_title">Payroll Platform Management</h3>
                         <p class="text-slate-600 text-xl font-medium mb-8 leading-relaxed" data-i18n="srv1_desc">
-                            We operate your payroll system like an internal specialist — without the overhead.
+                            Dedicated payroll operator support for ADP, Paychex, and Gusto.
                         </p>
-                        <ul class="space-y-3 text-lg font-semibold text-slate-800 mb-10">
-                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500"></i> <span data-i18n="srv1_l1">ADP / Paychex / Gusto administration</span></li>
-                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500"></i> <span data-i18n="srv1_l2">Multi-state payroll management</span></li>
-                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500"></i> <span data-i18n="srv1_l3">Payroll audit & cleanup</span></li>
-                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500"></i> <span data-i18n="srv1_l4">1099 / W-2 classification review</span></li>
-                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500"></i> <span data-i18n="srv1_l5">Quarterly filings support & Year-end processing</span></li>
-                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500"></i> <span data-i18n="srv1_l6">Internal payroll controls</span></li>
-                        </ul>
-                        <button onclick="openModal('payroll')" class="bg-indigo-600 text-white px-8 py-4 rounded-full font-bold hover:bg-indigo-700 transition flex items-center text-lg shadow-lg">
-                            <span data-i18n="srv1_btn">Learn How Our Operator Model Works</span> <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
-                        </button>
-                    </div>
-                    <div class="hidden md:block w-1/3">
-                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=600" alt="Payroll Audit" class="rounded-[2rem] shadow-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 text-lg font-semibold text-slate-800 mb-10">
+                            <div class="flex items-start"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500 shrink-0 mt-0.5"></i> <span data-i18n="srv1_l1">Full payroll administration</span></div>
+                            <div class="flex items-start"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500 shrink-0 mt-0.5"></i> <span data-i18n="srv1_l2">Multi-state payroll coordination</span></div>
+                            <div class="flex items-start"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500 shrink-0 mt-0.5"></i> <span data-i18n="srv1_l3">Earnings, deductions, and tax review</span></div>
+                            <div class="flex items-start"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500 shrink-0 mt-0.5"></i> <span data-i18n="srv1_l4">1099 / W-2 classification assessment</span></div>
+                            <div class="flex items-start"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500 shrink-0 mt-0.5"></i> <span data-i18n="srv1_l5">Quarterly filing oversight</span></div>
+                            <div class="flex items-start"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500 shrink-0 mt-0.5"></i> <span data-i18n="srv1_l6">Year-end processing supervision</span></div>
+                            <div class="flex items-start"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500 shrink-0 mt-0.5"></i> <span data-i18n="srv1_l7">Payroll audit and historical cleanup</span></div>
+                            <div class="flex items-start"><i data-lucide="check-circle-2" class="w-6 h-6 mr-3 text-indigo-500 shrink-0 mt-0.5"></i> <span data-i18n="srv1_l8">Internal payroll controls implementation</span></div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-center gap-6">
+                            <button onclick="openModal('payroll')" class="bg-indigo-600 text-white px-8 py-4 rounded-full font-bold hover:bg-indigo-700 transition flex items-center text-lg shadow-lg w-full sm:w-auto justify-center">
+                                <span data-i18n="hero_btn2">See How Our Operator Model Works</span> <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                            </button>
+                            <p class="text-indigo-800 font-bold italic text-sm" data-i18n="srv1_ft">This is ongoing operational management — not occasional advisory.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Service 2 -->
                 <div class="group p-10 rounded-[3rem] bg-emerald-50 border border-emerald-100 hover-bounce shadow-sm flex flex-col">
-                    <div class="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-xl">
-                        <i data-lucide="book-open-check" class="w-8 h-8"></i>
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-14 h-14 bg-emerald-600 rounded-2xl flex items-center justify-center text-white shadow-xl">
+                            <span class="font-black text-xl">2</span>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-black text-emerald-950" data-i18n="srv2_title">HR Policy & Knowledge Infrastructure</h3>
                     </div>
-                    <h3 class="text-3xl font-black mb-4 text-emerald-950" data-i18n="srv2_title">HR Policy & Knowledge Infrastructure</h3>
-                    <p class="text-slate-600 text-lg mb-6 leading-relaxed" data-i18n="srv2_desc">
-                        Structured HR documentation that reduces risk and confusion.
+                    <p class="text-slate-600 text-lg mb-6 leading-relaxed font-medium" data-i18n="srv2_desc">
+                        Structured documentation reduces compliance risk and internal confusion. We design:
                     </p>
-                    <ul class="space-y-3 text-md font-semibold text-slate-800 flex-1">
-                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-emerald-500 shrink-0"></i> <span data-i18n="srv2_l1">Employee handbook drafting</span></li>
-                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-emerald-500 shrink-0"></i> <span data-i18n="srv2_l2">Compliance policy design</span></li>
-                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-emerald-500 shrink-0"></i> <span data-i18n="srv2_l3">SOP documentation</span></li>
-                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-emerald-500 shrink-0"></i> <span data-i18n="srv2_l4">AI-searchable policy wiki</span></li>
-                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-emerald-500 shrink-0"></i> <span data-i18n="srv2_l5">Manager self-service guidance system</span></li>
+                    <ul class="space-y-4 text-md font-semibold text-slate-800 flex-1">
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-emerald-500 shrink-0"></i> <span data-i18n="srv2_l1">Employee handbooks</span></li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-emerald-500 shrink-0"></i> <span data-i18n="srv2_l2">Compliance policy frameworks</span></li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-emerald-500 shrink-0"></i> <span data-i18n="srv2_l3">Payroll and HR SOP documentation</span></li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-emerald-500 shrink-0"></i> <span data-i18n="srv2_l4">Manager guidance materials</span></li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-emerald-500 shrink-0"></i> <span data-i18n="srv2_l5">AI-searchable internal HR knowledge base</span></li>
                     </ul>
-                    <div class="mt-8 p-4 bg-emerald-100/50 rounded-2xl border border-emerald-200 text-emerald-800 font-bold italic text-sm" data-i18n="srv2_pos">
-                        "Replace 'ask HR' culture with structured knowledge access."
+                    <div class="mt-8 p-5 bg-emerald-100/50 rounded-2xl border border-emerald-200 text-emerald-800 font-bold italic text-sm text-center" data-i18n="srv2_ft">
+                        "Replace 'ask HR every time' with structured access to information."
                     </div>
                 </div>
 
                 <!-- Service 3 -->
                 <div class="group p-10 rounded-[3rem] bg-cyan-50 border border-cyan-100 hover-bounce shadow-sm flex flex-col">
-                    <div class="w-16 h-16 bg-cyan-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-xl">
-                        <i data-lucide="workflow" class="w-8 h-8"></i>
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-14 h-14 bg-cyan-600 rounded-2xl flex items-center justify-center text-white shadow-xl">
+                            <span class="font-black text-xl">3</span>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-black text-cyan-950" data-i18n="srv3_title">HR Infrastructure & Workflow Design</h3>
                     </div>
-                    <h3 class="text-3xl font-black mb-4 text-cyan-950" data-i18n="srv3_title">HR Infrastructure & Workflow Design</h3>
-                    <p class="text-slate-600 text-lg mb-6 leading-relaxed" data-i18n="srv3_desc">
-                        Build a scalable HR backbone before you hire a full HR department.
+                    <p class="text-slate-600 text-lg mb-6 leading-relaxed font-medium" data-i18n="srv3_desc">
+                        For growing companies without a senior HR executive. We build:
                     </p>
-                    <ul class="space-y-3 text-md font-semibold text-slate-800 flex-1">
+                    <ul class="space-y-4 text-md font-semibold text-slate-800 flex-1">
                         <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-cyan-500 shrink-0"></i> <span data-i18n="srv3_l1">HR role structure mapping</span></li>
-                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-cyan-500 shrink-0"></i> <span data-i18n="srv3_l2">Payroll + HR workflow integration</span></li>
-                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-cyan-500 shrink-0"></i> <span data-i18n="srv3_l3">Internal control framework</span></li>
-                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-cyan-500 shrink-0"></i> <span data-i18n="srv3_l4">Risk & compliance checkpoints</span></li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-cyan-500 shrink-0"></i> <span data-i18n="srv3_l2">Payroll-to-HR workflow integration</span></li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-cyan-500 shrink-0"></i> <span data-i18n="srv3_l3">Internal control checkpoints</span></li>
+                        <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-cyan-500 shrink-0"></i> <span data-i18n="srv3_l4">Risk exposure assessment</span></li>
                         <li class="flex items-start"><i data-lucide="check" class="w-5 h-5 mr-3 mt-0.5 text-cyan-500 shrink-0"></i> <span data-i18n="srv3_l5">Growth-stage HR roadmap</span></li>
                     </ul>
+                    <div class="mt-8 p-5 bg-cyan-100/50 rounded-2xl border border-cyan-200 text-cyan-800 font-bold italic text-sm text-center" data-i18n="srv3_ft">
+                        Before hiring a full HR department, build the framework correctly.
+                    </div>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- ④ How We Work -->
+    <!-- ④ Our Approach -->
     <section id="process" class="py-24 px-6 bg-slate-50">
         <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-16" data-i18n="proc_title">Our 4-Step Payroll Control Framework</h2>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-20" data-i18n="proc_title">Our Payroll Control Framework</h2>
             
             <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Hidden on mobile, line connector for desktop -->
                 <div class="hidden md:block step-line"></div>
                 
-                <div class="relative z-10 bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col items-center">
+                <div class="relative z-10 bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col items-center hover:-translate-y-2 transition-transform">
                     <div class="w-16 h-16 bg-slate-900 text-white rounded-full flex items-center justify-center font-black text-2xl mb-6 shadow-xl border-4 border-slate-50">1</div>
-                    <h4 class="font-bold text-xl text-slate-800" data-i18n="proc_s1">Audit Current Payroll Structure</h4>
+                    <h4 class="font-black text-xl text-slate-800 mb-3" data-i18n="proc_s1">Payroll Audit</h4>
+                    <p class="text-sm text-slate-500 font-medium" data-i18n="proc_d1">Review current platform configuration, workflows, and risk exposure.</p>
                 </div>
-                <div class="relative z-10 bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col items-center">
+                <div class="relative z-10 bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col items-center hover:-translate-y-2 transition-transform">
                     <div class="w-16 h-16 bg-slate-900 text-white rounded-full flex items-center justify-center font-black text-2xl mb-6 shadow-xl border-4 border-slate-50">2</div>
-                    <h4 class="font-bold text-xl text-slate-800" data-i18n="proc_s2">Risk & Compliance Assessment</h4>
+                    <h4 class="font-black text-xl text-slate-800 mb-3" data-i18n="proc_s2">Compliance & Risk Assessment</h4>
+                    <p class="text-sm text-slate-500 font-medium" data-i18n="proc_d2">Identify classification, filing, and documentation gaps.</p>
                 </div>
-                <div class="relative z-10 bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col items-center">
+                <div class="relative z-10 bg-white p-8 rounded-[2.5rem] shadow-sm border border-slate-100 flex flex-col items-center hover:-translate-y-2 transition-transform">
                     <div class="w-16 h-16 bg-slate-900 text-white rounded-full flex items-center justify-center font-black text-2xl mb-6 shadow-xl border-4 border-slate-50">3</div>
-                    <h4 class="font-bold text-xl text-slate-800" data-i18n="proc_s3">Platform Optimization</h4>
+                    <h4 class="font-black text-xl text-slate-800 mb-3" data-i18n="proc_s3">Platform Optimization</h4>
+                    <p class="text-sm text-slate-500 font-medium" data-i18n="proc_d3">Standardize processes and implement control checkpoints.</p>
                 </div>
-                <div class="relative z-10 bg-indigo-600 p-8 rounded-[2.5rem] shadow-xl flex flex-col items-center transform scale-105">
+                <div class="relative z-10 bg-indigo-600 p-8 rounded-[2.5rem] shadow-xl flex flex-col items-center transform scale-105 border-4 border-indigo-100">
                     <div class="w-16 h-16 bg-yellow-300 text-indigo-900 rounded-full flex items-center justify-center font-black text-2xl mb-6 shadow-xl border-4 border-indigo-500">4</div>
-                    <h4 class="font-bold text-xl text-white" data-i18n="proc_s4">Ongoing Operator Support</h4>
+                    <h4 class="font-black text-xl text-white mb-3" data-i18n="proc_s4">Ongoing Operator Support</h4>
+                    <p class="text-sm text-indigo-200 font-medium" data-i18n="proc_d4">Provide structured, consistent payroll management.</p>
                 </div>
             </div>
 
-            <div class="mt-16 text-2xl font-black text-indigo-600 bg-indigo-50 inline-block px-10 py-5 rounded-full border border-indigo-100 shadow-sm" data-i18n="proc_concl">
-                We don’t replace your payroll software. We make it work correctly.
+            <div class="mt-16 text-xl font-bold text-indigo-600 bg-indigo-50 inline-block px-10 py-5 rounded-full border border-indigo-100 shadow-sm" data-i18n="proc_concl">
+                We focus on control, consistency, and documentation.
             </div>
         </div>
     </section>
 
     <!-- ⑤ Ideal Clients & ⑥ Authority -->
     <section class="py-24 px-6 bg-white border-t border-slate-100">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
             
             <!-- Who We Work With -->
             <div>
                 <h2 class="text-4xl font-black text-slate-900 mb-8 flex items-center">
-                    <i data-lucide="target" class="w-8 h-8 mr-4 text-pink-500"></i> <span data-i18n="tgt_title">Who We Work With</span>
+                    <i data-lucide="target" class="w-8 h-8 mr-4 text-pink-500"></i> <span data-i18n="tgt_title">Ideal Clients</span>
                 </h2>
-                <ul class="space-y-6">
-                    <li class="flex items-center bg-slate-50 p-4 rounded-2xl"><i data-lucide="check-square" class="text-emerald-500 mr-4 w-6 h-6"></i><span class="font-bold text-lg text-slate-700" data-i18n="tgt_l1">10–200 employee businesses</span></li>
-                    <li class="flex items-center bg-slate-50 p-4 rounded-2xl"><i data-lucide="check-square" class="text-emerald-500 mr-4 w-6 h-6"></i><span class="font-bold text-lg text-slate-700" data-i18n="tgt_l2">Multi-state operations</span></li>
-                    <li class="flex items-center bg-slate-50 p-4 rounded-2xl"><i data-lucide="check-square" class="text-emerald-500 mr-4 w-6 h-6"></i><span class="font-bold text-lg text-slate-700" data-i18n="tgt_l3">Companies already using ADP / Paychex / Gusto</span></li>
-                    <li class="flex items-center bg-slate-50 p-4 rounded-2xl"><i data-lucide="check-square" class="text-emerald-500 mr-4 w-6 h-6"></i><span class="font-bold text-lg text-slate-700" data-i18n="tgt_l4">Growing companies without a senior HR leader</span></li>
-                    <li class="flex items-center bg-slate-50 p-4 rounded-2xl"><i data-lucide="check-square" class="text-emerald-500 mr-4 w-6 h-6"></i><span class="font-bold text-lg text-slate-700" data-i18n="tgt_l5">Founders who want payroll risk minimized</span></li>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center bg-slate-50 p-4 rounded-2xl border border-slate-100"><i data-lucide="check-square" class="text-emerald-500 mr-4 w-6 h-6 shrink-0"></i><span class="font-bold text-lg text-slate-700" data-i18n="tgt_l1">10–200 employee businesses</span></li>
+                    <li class="flex items-center bg-slate-50 p-4 rounded-2xl border border-slate-100"><i data-lucide="check-square" class="text-emerald-500 mr-4 w-6 h-6 shrink-0"></i><span class="font-bold text-lg text-slate-700" data-i18n="tgt_l2">Multi-state operations</span></li>
+                    <li class="flex items-center bg-slate-50 p-4 rounded-2xl border border-slate-100"><i data-lucide="check-square" class="text-emerald-500 mr-4 w-6 h-6 shrink-0"></i><span class="font-bold text-lg text-slate-700" data-i18n="tgt_l3">Companies already using ADP, Paychex, or Gusto</span></li>
+                    <li class="flex items-center bg-slate-50 p-4 rounded-2xl border border-slate-100"><i data-lucide="check-square" class="text-emerald-500 mr-4 w-6 h-6 shrink-0"></i><span class="font-bold text-lg text-slate-700" data-i18n="tgt_l4">Founders without in-house payroll expertise</span></li>
+                    <li class="flex items-center bg-slate-50 p-4 rounded-2xl border border-slate-100"><i data-lucide="check-square" class="text-emerald-500 mr-4 w-6 h-6 shrink-0"></i><span class="font-bold text-lg text-slate-700" data-i18n="tgt_l5">HR teams needing structured operational support</span></li>
                 </ul>
+                <p class="text-lg font-bold text-pink-600 bg-pink-50 p-4 rounded-2xl border border-pink-100 inline-block" data-i18n="tgt_ft">If your payroll platform feels “managed but not controlled,” we can help.</p>
             </div>
 
             <!-- Authority -->
             <div>
                 <h2 class="text-4xl font-black text-slate-900 mb-8 flex items-center">
-                    <i data-lucide="award" class="w-8 h-8 mr-4 text-indigo-500"></i> <span data-i18n="auth_title">Authority & Expertise</span>
+                    <i data-lucide="award" class="w-8 h-8 mr-4 text-indigo-500"></i> <span data-i18n="auth_title">Why Core People Ops</span>
                 </h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div class="p-6 border-2 border-indigo-50 rounded-3xl text-center shadow-sm">
-                        <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="clock" class="w-6 h-6"></i></div>
-                        <h4 class="font-black text-slate-800 text-lg" data-i18n="auth_l1">8+ Years</h4>
-                        <p class="text-sm text-slate-500 font-semibold" data-i18n="auth_d1">Payroll Experience</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                    <div class="p-6 border-2 border-indigo-50 rounded-3xl text-center shadow-sm hover:border-indigo-200 transition-colors">
+                        <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="crosshair" class="w-6 h-6"></i></div>
+                        <h4 class="font-black text-slate-800 text-lg" data-i18n="auth_l1">Consulting Model</h4>
+                        <p class="text-sm text-slate-500 font-semibold" data-i18n="auth_d1">Payroll-focused</p>
                     </div>
-                    <div class="p-6 border-2 border-indigo-50 rounded-3xl text-center shadow-sm">
+                    <div class="p-6 border-2 border-indigo-50 rounded-3xl text-center shadow-sm hover:border-indigo-200 transition-colors">
                         <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="map" class="w-6 h-6"></i></div>
                         <h4 class="font-black text-slate-800 text-lg" data-i18n="auth_l2">Multi-State</h4>
-                        <p class="text-sm text-slate-500 font-semibold" data-i18n="auth_d2">Compliance Exposure</p>
+                        <p class="text-sm text-slate-500 font-semibold" data-i18n="auth_d2">Compliance Experience</p>
                     </div>
-                    <div class="p-6 border-2 border-indigo-50 rounded-3xl text-center shadow-sm">
+                    <div class="p-6 border-2 border-indigo-50 rounded-3xl text-center shadow-sm hover:border-indigo-200 transition-colors">
                         <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="shield-check" class="w-6 h-6"></i></div>
-                        <h4 class="font-black text-slate-800 text-lg" data-i18n="auth_l3">Internal Controls</h4>
-                        <p class="text-sm text-slate-500 font-semibold" data-i18n="auth_d3">Operations Background</p>
+                        <h4 class="font-black text-slate-800 text-lg" data-i18n="auth_l3">Operations Background</h4>
+                        <p class="text-sm text-slate-500 font-semibold" data-i18n="auth_d3">& Internal Control</p>
                     </div>
-                    <div class="p-6 border-2 border-indigo-50 rounded-3xl text-center shadow-sm">
-                        <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="languages" class="w-6 h-6"></i></div>
-                        <h4 class="font-black text-slate-800 text-lg" data-i18n="auth_l4">Bilingual</h4>
-                        <p class="text-sm text-slate-500 font-semibold" data-i18n="auth_d4">HR Support</p>
+                    <div class="p-6 border-2 border-indigo-50 rounded-3xl text-center shadow-sm hover:border-indigo-200 transition-colors">
+                        <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="file-text" class="w-6 h-6"></i></div>
+                        <h4 class="font-black text-slate-800 text-lg" data-i18n="auth_l4">Methodology</h4>
+                        <p class="text-sm text-slate-500 font-semibold" data-i18n="auth_d4">Structured Documentation</p>
                     </div>
                 </div>
+                <p class="text-lg font-bold text-indigo-700 bg-indigo-50 p-4 rounded-2xl border border-indigo-100 inline-block" data-i18n="auth_ft">We approach payroll as operational risk management — not clerical processing.</p>
             </div>
 
         </div>
     </section>
 
     <!-- ⑦ Soft Expansion -->
-    <section class="py-12 bg-slate-100 text-center px-6">
-        <h4 class="text-sm font-black text-slate-400 uppercase tracking-widest mb-6" data-i18n="exp_title">Additional Capabilities (By Engagement Scope)</h4>
-        <div class="flex flex-wrap justify-center gap-4 text-slate-600 font-bold max-w-5xl mx-auto">
-            <span class="bg-white px-5 py-2 rounded-full shadow-sm border border-slate-200" data-i18n="exp_l1">Payroll system integration</span>
-            <span class="bg-white px-5 py-2 rounded-full shadow-sm border border-slate-200" data-i18n="exp_l2">Recruiting advisory</span>
-            <span class="bg-white px-5 py-2 rounded-full shadow-sm border border-slate-200" data-i18n="exp_l3">Remote operational outsourcing</span>
-            <span class="bg-white px-5 py-2 rounded-full shadow-sm border border-slate-200" data-i18n="exp_l4">HR org structure consulting</span>
+    <section class="py-16 bg-slate-50 text-center px-6 border-t border-slate-200">
+        <h4 class="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-8" data-i18n="exp_title">Expanded services available based on engagement scope</h4>
+        <div class="flex flex-wrap justify-center gap-4 text-slate-700 font-bold max-w-5xl mx-auto mb-8">
+            <span class="bg-white px-6 py-3 rounded-full shadow-sm border border-slate-200" data-i18n="exp_l1">Payroll system integration advisory</span>
+            <span class="bg-white px-6 py-3 rounded-full shadow-sm border border-slate-200" data-i18n="exp_l2">Recruiting support coordination</span>
+            <span class="bg-white px-6 py-3 rounded-full shadow-sm border border-slate-200" data-i18n="exp_l3">Remote operational outsourcing guidance</span>
+            <span class="bg-white px-6 py-3 rounded-full shadow-sm border border-slate-200" data-i18n="exp_l4">HR organizational structure consulting</span>
         </div>
+        <p class="text-slate-500 font-medium text-sm italic" data-i18n="exp_ft">Primary focus remains payroll-centered HR infrastructure.</p>
     </section>
 
     <!-- ⑧ Final CTA -->
-    <section class="py-24 px-6 bg-slate-900 text-center">
+    <section class="py-28 px-6 bg-slate-900 text-center">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-4xl md:text-6xl font-black text-white mb-10 leading-tight" data-i18n="cta_title">
-                Payroll is not admin work. <br><span class="text-indigo-400">It’s risk management.</span>
+            <h2 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight" data-i18n="cta_title">
+                Payroll Is Operational Risk <br><span class="text-indigo-400">— Not Administrative Work</span>
             </h2>
+            <div class="flex justify-center space-x-4 md:space-x-8 text-lg md:text-2xl font-bold text-slate-400 mb-12">
+                <span data-i18n="cta_sub1">Strengthen control.</span>
+                <span class="text-slate-600">•</span>
+                <span data-i18n="cta_sub2">Reduce exposure.</span>
+                <span class="text-slate-600">•</span>
+                <span data-i18n="cta_sub3">Create structure.</span>
+            </div>
             <a href="https://calendar.app.google/sZtzjvNQF5mQ5552A" target="_blank" class="inline-flex bg-white text-slate-900 px-12 py-6 rounded-full font-black text-2xl hover:scale-105 transition-transform shadow-[0_0_40px_rgba(255,255,255,0.2)] items-center">
-                <span data-i18n="cta_btn">Book a Strategy Call</span> <i data-lucide="arrow-right" class="ml-4 w-6 h-6"></i>
+                <span data-i18n="cta_btn">Schedule a Payroll Strategy Call</span> <i data-lucide="arrow-right" class="ml-4 w-6 h-6"></i>
             </a>
         </div>
     </section>
@@ -365,7 +394,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 text-white pb-20 px-6 border-t border-slate-800 pt-16">
+    <footer class="bg-slate-950 text-white pb-20 px-6 pt-16">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-slate-500 font-medium">
             <div class="flex items-center space-x-3 mb-6 md:mb-0">
                 <div class="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center text-white font-black text-sm">C</div>
@@ -382,76 +411,91 @@
 
         const i18n = {
             zh: {
-                nav_problem: "当前痛点",
+                nav_problem: "当前挑战",
                 nav_services: "核心服务",
-                nav_process: "服务流程",
+                nav_process: "工作方式",
                 nav_book: "预约咨询",
-                hero_title: "专注于成长型企业的 <br><span class=\"text-yellow-300 italic\">薪酬与 HR 风控咨询</span>",
-                hero_desc: "我们代管您的 ADP, Paychex 或 Gusto 平台，强化税务合规，并搭建可扩展的 HR 基础设施——让您的团队专注业务增长。",
+                hero_title: "专注于成长型企业的 <br><span class=\"text-yellow-300 italic\">以薪酬为核心的 HR 咨询</span>",
+                hero_desc: "我们代管您的 ADP, Paychex 或 Gusto 平台，强化合规风控，并搭建结构化的 HR 基础设施——确保您的薪酬发放精准、稳定、无中断。",
                 hero_btn1: "<i data-lucide=\"phone-call\" class=\"mr-3 w-6 h-6\"></i> 预约薪酬战略会议",
-                hero_btn2: "<i data-lucide=\"settings\" class=\"mr-3 w-6 h-6\"></i> 查看代管模式详情",
+                hero_btn2: "<i data-lucide=\"settings\" class=\"mr-3 w-6 h-6\"></i> 了解我们的代管模式",
                 prob_title: "您的薪酬平台真的在掌控之中吗？",
-                prob_li1: "频繁的薪资错误与重复核算",
-                prob_li2: "多州税法与合规要求混乱",
-                prob_li3: "年终 W-2 / 1099 纠错恐慌",
-                prob_li4: "HR 经理被行政琐事彻底淹没",
-                prob_li5: "缺乏结构化的政策说明与文档",
-                prob_li6: "内部没有任何薪酬审计流程",
-                prob_concl: "薪酬系统很少出错，出错的往往是管理方式。",
-                srv_label: "核心专注领域",
-                srv_title: "核心代管服务",
+                prob_sub: "许多成长型企业重金投资了强大的薪酬平台——但内部却缺乏正确管理它们的专业知识。",
+                prob_li1: "频繁的薪资错误与非周期纠错",
+                prob_li2: "多州运营面临的税务合规风险",
+                prob_li3: "1099 与 W-2 员工的错误分类",
+                prob_li4: "年终税务申报压力 (W-2, 1099, 941核账)",
+                prob_li5: "HR 经理被繁重的行政琐事彻底淹没",
+                prob_li6: "缺乏书面的薪酬工作流与内部风控架构",
+                prob_concl: "薪酬系统很少出错，出错的往往是运营监管。",
+                srv_label: "我们的职责",
+                srv_title: "我们专业且主动地代管您的薪酬平台",
+                srv_sub: "我们不替换您的系统。<span class=\"font-bold text-indigo-600\">我们确保它被正确地管理。</span>",
                 srv1_title: "薪酬平台托管管理",
-                srv1_desc: "我们像您的内部薪酬专家一样运作系统——但不产生全职员工的间接成本。",
-                srv1_l1: "ADP / Paychex / Gusto 系统深度管理",
-                srv1_l2: "跨州薪资税务与合规处理",
-                srv1_l3: "历史薪酬数据审计与清理",
-                srv1_l4: "1099 与 W-2 员工分类复核",
-                srv1_l5: "季度税务申报与年终处理支持",
-                srv1_l6: "建立内部薪酬风控制度",
-                srv1_btn: "了解我们的代管运作模式",
+                srv1_desc: "为 ADP, Paychex 和 Gusto 提供专属的薪酬代管支持。",
+                srv1_l1: "全盘薪酬行政管理",
+                srv1_l2: "跨州薪酬统筹协调",
+                srv1_l3: "收入、扣款与税务配置审查",
+                srv1_l4: "1099 / W-2 员工分类评估",
+                srv1_l5: "季度税务申报监督",
+                srv1_l6: "年终发薪流程指导",
+                srv1_l7: "历史薪酬数据审计与清理",
+                srv1_l8: "内部薪酬风控制度落地",
+                srv1_ft: "这是持续的业务运营管理——而非偶尔的口头咨询。",
                 srv2_title: "HR 政策与知识基建",
-                srv2_desc: "结构化的 HR 文档，有效降低合规风险与员工困惑。",
-                srv2_l1: "员工手册 (Handbook) 起草与更新",
-                srv2_l2: "雇佣合规政策专项设计",
-                srv2_l3: "标准操作流程 (SOP) 撰写",
-                srv2_l4: "AI 驱动的政策检索引擎搭建",
-                srv2_l5: "管理者自助指引系统",
-                srv2_pos: "用“结构化知识库”取代低效的“问问 HR”文化。",
+                srv2_desc: "结构化的文档能大幅降低合规风险与内部沟通成本。我们负责设计：",
+                srv2_l1: "员工手册 (Employee Handbooks)",
+                srv2_l2: "雇佣合规政策框架",
+                srv2_l3: "薪酬与 HR 标准操作流程 (SOP)",
+                srv2_l4: "管理者实操指引材料",
+                srv2_l5: "AI 驱动的企业内部 HR 知识库",
+                srv2_ft: "用“结构化的信息获取”取代“事事都去问 HR”。",
                 srv3_title: "HR 架构与流程设计",
-                srv3_desc: "在盲目扩招全职 HR 团队之前，先建好可扩展的骨干网络。",
+                srv3_desc: "专为尚未聘请高阶 HR 高管的成长型企业打造。我们负责构建：",
                 srv3_l1: "HR 岗位架构与职责映射",
-                srv3_l2: "打通薪酬与 HR 审批工作流",
-                srv3_l3: "搭建内部风控与制衡框架",
-                srv3_l4: "设立风险与合规检查点",
-                srv3_l5: "定制成长型企业 HR 路线图",
-                proc_title: "四步薪酬风控模型",
-                proc_s1: "审计现有薪酬架构",
-                proc_s2: "评估风险与合规隐患",
-                proc_s3: "系统底层规则优化",
-                proc_s4: "长期的操作代管支持",
-                proc_concl: "我们不替换您的系统，我们让系统正确地工作。",
+                srv3_l2: "打通薪酬与 HR 的审批工作流",
+                srv3_l3: "搭建内部风控合规检查点",
+                srv3_l4: "合规与税务风险敞口评估",
+                srv3_l5: "定制成长型企业的 HR 路线图",
+                srv3_ft: "在盲目扩招全职 HR 部门之前，先正确地建好底层框架。",
+                proc_title: "我们的薪酬风控模型",
+                proc_s1: "薪酬现状审计",
+                proc_d1: "审查当前的平台配置、工作流以及风险敞口。",
+                proc_s2: "合规与风险评估",
+                proc_d2: "识别员工分类、税务申报及文档记录上的漏洞。",
+                proc_s3: "平台底层优化",
+                proc_d3: "标准化操作流程并植入风险控制检查点。",
+                proc_s4: "长期代管支持",
+                proc_d4: "提供结构化、高度一致的日常薪酬管理。",
+                proc_concl: "我们专注于掌控力、一致性以及标准化的文档落地。",
                 tgt_title: "我们的理想客户",
                 tgt_l1: "10-200 人的成长型企业",
                 tgt_l2: "存在跨州业务与多实体操作",
-                tgt_l3: "已在使用 ADP / Paychex / Gusto",
-                tgt_l4: "正在快速增长但缺乏资深 HR 负责人",
-                tgt_l5: "希望最大程度降低薪酬合规风险的创始人",
-                auth_title: "专业资质与背书",
-                auth_l1: "8+ 年",
-                auth_d1: "美国薪酬管理经验",
-                auth_l2: "全美多州",
-                auth_d2: "合规与税务处理经历",
-                auth_l3: "内部风控",
-                auth_d3: "运营与财务审计背景",
-                auth_l4: "双语沟通",
-                auth_d4: "中英 HR 深度支持",
-                exp_title: "其他扩展支持 (视合作范围而定)",
-                exp_l1: "HR 系统迁移与数据整合",
-                exp_l2: "核心岗位招聘策略咨询",
-                exp_l3: "远程团队海外合规外包",
+                tgt_l3: "已在使用 ADP, Paychex 或 Gusto 平台",
+                tgt_l4: "缺乏内部专业薪酬专员的创始人",
+                tgt_l5: "急需结构化运营支持的 HR 团队",
+                tgt_ft: "如果您的薪酬平台感觉像是“有人在管，但毫无章法”，我们可以帮您重获掌控。",
+                auth_title: "为什么选择 Core People Ops",
+                auth_l1: "咨询模式",
+                auth_d1: "以薪酬风控为绝对核心",
+                auth_l2: "多州合规",
+                auth_d2: "深厚的美国多州跨域经验",
+                auth_l3: "运营背景",
+                auth_d3: "内部风控与财务审计出身",
+                auth_l4: "方法论",
+                auth_d4: "极度注重结构化文档落地",
+                auth_ft: "我们将 Payroll 视为一项运营风控工作——而绝非简单的文员录入。",
+                exp_title: "根据合作深度可提供的扩展服务",
+                exp_l1: "HR / 薪酬系统集成咨询",
+                exp_l2: "核心岗位招聘支持与协调",
+                exp_l3: "远程团队海外合规外包指导",
                 exp_l4: "组织架构与薪酬结构咨询",
-                cta_title: "薪酬管理绝不是行政琐事。<br><span class=\"text-indigo-400\">它是核心的风险控制。</span>",
-                cta_btn: "预约您的薪酬战略会议",
+                exp_ft: "我们的核心重心始终是：以薪酬为核心的 HR 基础设施建设。",
+                cta_title: "薪酬管理是运营风险 <br><span class=\"text-indigo-400\">— 绝非行政琐事</span>",
+                cta_sub1: "强化控制",
+                cta_sub2: "降低风险",
+                cta_sub3: "建立秩序",
+                cta_btn: "立即安排薪酬战略会议",
                 ft_copy: "© 2026 Core People Operations LLC. 保留所有权利。"
             },
             en: {
@@ -460,71 +504,86 @@
                 nav_process: "How We Work",
                 nav_book: "Book Consult",
                 hero_title: "Payroll-Centered HR Consulting <br><span class=\"text-yellow-300 italic\">for Growing Businesses</span>",
-                hero_desc: "We manage your ADP, Paychex, or Gusto platform, strengthen compliance, and build a scalable HR foundation — so your team can focus on growth.",
+                hero_desc: "We manage your ADP, Paychex, or Gusto platform, strengthen compliance controls, and build structured HR infrastructure — so payroll runs accurately, consistently, and without disruption.",
                 hero_btn1: "<i data-lucide=\"phone-call\" class=\"mr-3 w-6 h-6\"></i> Book a Payroll Strategy Call",
-                hero_btn2: "<i data-lucide=\"settings\" class=\"mr-3 w-6 h-6\"></i> See How We Operate ADP",
+                hero_btn2: "<i data-lucide=\"settings\" class=\"mr-3 w-6 h-6\"></i> See How Our Operator Model Works",
                 prob_title: "Is Your Payroll Platform Really Under Control?",
-                prob_li1: "Payroll errors and reprocessing",
-                prob_li2: "Multi-state compliance confusion",
-                prob_li3: "Year-end panic (W-2 / 1099 corrections)",
-                prob_li4: "HR manager overloaded with admin",
-                prob_li5: "No structured policy documentation",
-                prob_li6: "No internal payroll audit process",
-                prob_concl: "Payroll systems don’t fail. Poor management does.",
-                srv_label: "Focus Areas",
-                srv_title: "Core Services",
+                prob_sub: "Many growing companies invest in strong payroll platforms — but lack internal expertise to manage them properly.",
+                prob_li1: "Payroll errors and off-cycle corrections",
+                prob_li2: "Multi-state compliance exposure",
+                prob_li3: "Misclassification of 1099 vs W-2 workers",
+                prob_li4: "Year-end filing stress (W-2, 1099, 941 reconciliation)",
+                prob_li5: "HR managers overloaded with administrative tasks",
+                prob_li6: "No documented payroll workflow or internal control structure",
+                prob_concl: "Payroll systems rarely fail. Operational oversight does.",
+                srv_label: "What We Do",
+                srv_title: "We Operate Your Payroll Platform — Professionally and Proactively",
+                srv_sub: "We do not replace your payroll software. <span class=\"font-bold text-indigo-600\">We ensure it is managed correctly.</span>",
                 srv1_title: "Payroll Platform Management",
-                srv1_desc: "We operate your payroll system like an internal specialist — without the overhead.",
-                srv1_l1: "ADP / Paychex / Gusto administration",
-                srv1_l2: "Multi-state payroll management",
-                srv1_l3: "Payroll audit & cleanup",
-                srv1_l4: "1099 / W-2 classification review",
-                srv1_l5: "Quarterly filings support & Year-end processing",
-                srv1_l6: "Internal payroll controls",
-                srv1_btn: "Learn How Our Operator Model Works",
+                srv1_desc: "Dedicated payroll operator support for ADP, Paychex, and Gusto.",
+                srv1_l1: "Full payroll administration",
+                srv1_l2: "Multi-state payroll coordination",
+                srv1_l3: "Earnings, deductions, and tax configuration review",
+                srv1_l4: "1099 / W-2 classification assessment",
+                srv1_l5: "Quarterly filing oversight",
+                srv1_l6: "Year-end processing supervision",
+                srv1_l7: "Payroll audit and historical cleanup",
+                srv1_l8: "Internal payroll controls implementation",
+                srv1_ft: "This is ongoing operational management — not occasional advisory.",
                 srv2_title: "HR Policy & Knowledge Infrastructure",
-                srv2_desc: "Structured HR documentation that reduces risk and confusion.",
-                srv2_l1: "Employee handbook drafting",
-                srv2_l2: "Compliance policy design",
-                srv2_l3: "SOP documentation",
-                srv2_l4: "AI-searchable policy wiki",
-                srv2_l5: "Manager self-service guidance system",
-                srv2_pos: "\"Replace 'ask HR' culture with structured knowledge access.\"",
+                srv2_desc: "Structured documentation reduces compliance risk and internal confusion. We design:",
+                srv2_l1: "Employee handbooks",
+                srv2_l2: "Compliance policy frameworks",
+                srv2_l3: "Payroll and HR SOP documentation",
+                srv2_l4: "Manager guidance materials",
+                srv2_l5: "AI-searchable internal HR knowledge base",
+                srv2_ft: "\"Replace 'ask HR every time' with structured access to information.\"",
                 srv3_title: "HR Infrastructure & Workflow Design",
-                srv3_desc: "Build a scalable HR backbone before you hire a full HR department.",
+                srv3_desc: "For growing companies without a senior HR executive. We build:",
                 srv3_l1: "HR role structure mapping",
-                srv3_l2: "Payroll + HR workflow integration",
-                srv3_l3: "Internal control framework",
-                srv3_l4: "Risk & compliance checkpoints",
+                srv3_l2: "Payroll-to-HR workflow integration",
+                srv3_l3: "Internal control checkpoints",
+                srv3_l4: "Risk exposure assessment",
                 srv3_l5: "Growth-stage HR roadmap",
-                proc_title: "Our 4-Step Payroll Control Framework",
-                proc_s1: "Audit Current Payroll Structure",
-                proc_s2: "Risk & Compliance Assessment",
+                srv3_ft: "Before hiring a full HR department, build the framework correctly.",
+                proc_title: "Our Payroll Control Framework",
+                proc_s1: "Payroll Audit",
+                proc_d1: "Review current platform configuration, workflows, and risk exposure.",
+                proc_s2: "Compliance & Risk Assessment",
+                proc_d2: "Identify classification, filing, and documentation gaps.",
                 proc_s3: "Platform Optimization",
+                proc_d3: "Standardize processes and implement control checkpoints.",
                 proc_s4: "Ongoing Operator Support",
-                proc_concl: "We don’t replace your payroll software. We make it work correctly.",
-                tgt_title: "Who We Work With",
+                proc_d4: "Provide structured, consistent payroll management.",
+                proc_concl: "We focus on control, consistency, and documentation.",
+                tgt_title: "Ideal Clients",
                 tgt_l1: "10–200 employee businesses",
                 tgt_l2: "Multi-state operations",
-                tgt_l3: "Companies already using ADP / Paychex / Gusto",
-                tgt_l4: "Growing companies without a senior HR leader",
-                tgt_l5: "Founders who want payroll risk minimized",
-                auth_title: "Authority & Expertise",
-                auth_l1: "8+ Years",
-                auth_d1: "Payroll Experience",
+                tgt_l3: "Companies already using ADP, Paychex, or Gusto",
+                tgt_l4: "Founders without in-house payroll expertise",
+                tgt_l5: "HR teams needing structured operational support",
+                tgt_ft: "If your payroll platform feels “managed but not controlled,” we can help.",
+                auth_title: "Why Core People Ops",
+                auth_l1: "Consulting Model",
+                auth_d1: "Payroll-focused",
                 auth_l2: "Multi-State",
-                auth_d2: "Compliance Exposure",
-                auth_l3: "Internal Controls",
-                auth_d3: "Operations Background",
-                auth_l4: "Bilingual",
-                auth_d4: "HR Support",
-                exp_title: "Additional Capabilities (By Engagement Scope)",
-                exp_l1: "Payroll system integration",
-                exp_l2: "Recruiting advisory",
-                exp_l3: "Remote operational outsourcing",
-                exp_l4: "HR org structure consulting",
-                cta_title: "Payroll is not admin work. <br><span class=\"text-indigo-400\">It’s risk management.</span>",
-                cta_btn: "Book a Strategy Call",
+                auth_d2: "Compliance Experience",
+                auth_l3: "Operations Background",
+                auth_d3: "& Internal Control",
+                auth_l4: "Methodology",
+                auth_d4: "Structured Documentation",
+                auth_ft: "We approach payroll as operational risk management — not clerical processing.",
+                exp_title: "Expanded services available based on engagement scope",
+                exp_l1: "Payroll system integration advisory",
+                exp_l2: "Recruiting support coordination",
+                exp_l3: "Remote operational outsourcing guidance",
+                exp_l4: "HR organizational structure consulting",
+                exp_ft: "Primary focus remains payroll-centered HR infrastructure.",
+                cta_title: "Payroll Is Operational Risk <br><span class=\"text-indigo-400\">— Not Administrative Work</span>",
+                cta_sub1: "Strengthen control.",
+                cta_sub2: "Reduce exposure.",
+                cta_sub3: "Create structure.",
+                cta_btn: "Schedule a Payroll Strategy Call",
                 ft_copy: "© 2026 Core People Operations LLC. All rights reserved."
             }
         };
@@ -578,7 +637,7 @@
                             </h3>
                             <ul class="space-y-5 text-slate-700 text-lg">
                                 <li class="flex items-start"><i data-lucide="check" class="text-emerald-500 mr-4 mt-1 w-6 h-6"></i><span>${isEn ? "<b>Admin Access:</b> We log in as practitioners to your ADP, Paychex, or Gusto account." : "<b>管理员权限接入：</b>我们作为超级管理员安全登入您的 ADP / Paychex / Gusto 平台。"}</span></li>
-                                <li class="flex items-start"><i data-lucide="check" class="text-emerald-500 mr-4 mt-1 w-6 h-6"></i><span><b>Data Governance:</b> We establish strict cut-off times and data flow SOPs so hours and adjustments are never missed." : "<b>数据治理机制：</b>设立严格的数据截止时间与工时收集标准流程，杜绝数据遗漏。"}</span></li>
+                                <li class="flex items-start"><i data-lucide="check" class="text-emerald-500 mr-4 mt-1 w-6 h-6"></i><span>${isEn ? "<b>Data Governance:</b> We establish strict cut-off times and data flow SOPs so hours and adjustments are never missed." : "<b>数据治理机制：</b>设立严格的数据截止时间与工时收集标准流程，杜绝数据遗漏。"}</span></li>
                                 <li class="flex items-start"><i data-lucide="check" class="text-emerald-500 mr-4 mt-1 w-6 h-6"></i><span>${isEn ? "<b>Reconciliation:</b> We balance gross-to-net before execution, ensuring taxes match exactly." : "<b>发薪前核账：</b>在正式打款前执行毛收入到净收入 (Gross-to-Net) 的严密对账。"}</span></li>
                             </ul>
                         </section>
@@ -627,7 +686,8 @@
             if (e.key === 'Escape') closeModal();
         });
 
-        lucide.createIcons();
+        // Initialize i18n
+        setLanguage(currentLang);
     </script>
 </body>
 </html>
