@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Core People Ops | Payroll & Compliance Management</title>
     
-    <!-- Google Tag Manager (Placeholder for Ads Tracking) -->
+    <!-- Google Ads gtag placeholder -->
     <script>
         // window.dataLayer = window.dataLayer || [];
         // function gtag(){dataLayer.push(arguments);}
@@ -23,7 +23,6 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #f8fafc;
             color: #0f172a;
-            scroll-behavior: smooth;
         }
 
         /* View State Management */
@@ -169,6 +168,11 @@
         .chat-message.bot p { margin-bottom: 0.5em; }
         .chat-message.bot ul { list-style-type: disc; margin-left: 1.5em; margin-bottom: 0.5em; }
         .chat-message.bot strong { color: #0f172a; }
+        
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); opacity: .4; }
+            40% { transform: scale(1); opacity: 1; }
+        }
         .typing-indicator span {
             display: inline-block;
             width: 6px;
@@ -454,7 +458,7 @@
         <!-- Navigation -->
         <nav class="fixed w-full z-[100] top-0 px-6 py-4">
             <div class="max-w-7xl mx-auto flex justify-between items-center fs-glass-card rounded-full px-8 py-3 shadow-lg">
-                <div class="flex items-center space-x-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                <div class="flex items-center space-x-2 cursor-pointer" onclick="document.getElementById('view-fullsite').scrollIntoView({behavior: 'smooth'})">
                     <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg">C</div>
                     <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-pink-600 hidden sm:block">Core People Ops</span>
                 </div>
@@ -774,6 +778,9 @@
                             <i data-lucide="send" class="w-4 h-4"></i>
                         </button>
                     </form>
+                    <div class="text-center mt-2">
+                        <span class="text-[10px] text-slate-400" data-i18n="ai_disclaimer">General info only — not legal advice.</span>
+                    </div>
                 </div>
             </div>
             <button id="ai-fab" onclick="toggleAiWidget()" class="bg-gradient-to-r from-indigo-600 to-pink-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-105 transition-transform active:scale-95">
@@ -807,26 +814,26 @@
             </button>
             <div id="form-step" class="p-8 sm:p-10">
                 <div class="text-center mb-8">
-                    <h3 class="text-2xl font-black text-slate-900 mb-2">Let's Fix Your Payroll</h3>
-                    <p class="text-slate-500 font-medium">Enter your details to access pricing and schedule your free review.</p>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2" data-i18n="form_title">Let's Fix Your Payroll</h3>
+                    <p class="text-slate-500 font-medium" data-i18n="form_sub">Enter your details to access pricing and schedule your free review.</p>
                 </div>
                 <form id="conversion-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-1">Full Name *</label>
+                        <label class="block text-sm font-bold text-slate-700 mb-1" data-i18n="form_l_name">Full Name *</label>
                         <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition bg-slate-50 focus:bg-white" placeholder="John Doe">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-1">Company Name *</label>
+                        <label class="block text-sm font-bold text-slate-700 mb-1" data-i18n="form_l_company">Company Name *</label>
                         <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition bg-slate-50 focus:bg-white" placeholder="Acme Corp">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-1">Work Email *</label>
+                        <label class="block text-sm font-bold text-slate-700 mb-1" data-i18n="form_l_email">Work Email *</label>
                         <input type="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition bg-slate-50 focus:bg-white" placeholder="john@company.com">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-1">Number of Employees *</label>
+                        <label class="block text-sm font-bold text-slate-700 mb-1" data-i18n="form_l_size">Number of Employees *</label>
                         <select required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none transition bg-slate-50 focus:bg-white">
-                            <option value="" disabled selected>Select size</option>
+                            <option value="" disabled selected data-i18n="form_p_size">Select size</option>
                             <option value="1-10">1 - 10</option>
                             <option value="11-50">11 - 50</option>
                             <option value="51-100">51 - 100</option>
@@ -835,19 +842,25 @@
                         </select>
                     </div>
                     <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-4 rounded-lg hover:bg-indigo-700 transition shadow-md mt-4 text-lg">
-                        Continue to Scheduling <i data-lucide="arrow-right" class="inline w-5 h-5 ml-1"></i>
+                        <span data-i18n="form_btn">Continue to Scheduling</span> <i data-lucide="arrow-right" class="inline w-5 h-5 ml-1"></i>
                     </button>
+                    <div class="text-center mt-4 text-xs text-slate-400">
+                        <p data-i18n="form_privacy_txt">We’ll only use your info to schedule and follow up. No spam.</p>
+                        <div class="mt-1 space-x-2">
+                            <a href="#" class="hover:text-slate-600 underline" data-i18n="form_privacy_link">Privacy Policy</a>
+                            <a href="#" class="hover:text-slate-600 underline" data-i18n="form_terms_link">Terms</a>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div id="calendly-step" class="p-2 sm:p-4 hidden-initial h-[750px] flex flex-col">
                 <div class="text-center pt-6 pb-2 shrink-0">
-                    <h3 class="text-xl font-black text-slate-900">Select a Time</h3>
-                    <p class="text-sm text-slate-500">Your info is saved. Pick a slot below.</p>
+                    <h3 class="text-xl font-black text-slate-900" data-i18n="cal_title">Select a Time</h3>
+                    <p class="text-sm text-slate-500" data-i18n="cal_sub">Your info is saved. Pick a slot below.</p>
                 </div>
                 
                 <!-- Calendly inline widget begin -->
                 <div class="calendly-inline-widget flex-1" data-url="https://calendly.com/wendy-z-corepeopleops/payroll-risk-review" style="min-width:320px;height:700px;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
                 <!-- Calendly inline widget end -->
                 
             </div>
@@ -863,17 +876,19 @@
             <div class="w-16 h-16 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <i data-lucide="file-down" class="w-8 h-8"></i>
             </div>
-            <h3 class="text-3xl font-black text-slate-900 mb-4">Wait! Before You Go...</h3>
-            <p class="text-lg text-slate-600 mb-8 font-medium">Download our <span class="font-bold text-rose-600">Free Payroll Risk Checklist</span>. Ensure your multi-state setup isn't hiding expensive penalties.</p>
-            <button onclick="closeModal('exit'); openModal('lead-form')" class="w-full bg-rose-600 text-white font-bold py-4 rounded-xl hover:bg-rose-700 transition shadow-lg text-lg mb-4">
+            <h3 class="text-3xl font-black text-slate-900 mb-4" data-i18n="exit_title">Wait! Before You Go...</h3>
+            <p class="text-lg text-slate-600 mb-8 font-medium" data-i18n="exit_desc">Download our <span class="font-bold text-rose-600">Free Payroll Risk Checklist</span>. Ensure your multi-state setup isn't hiding expensive penalties.</p>
+            <button onclick="closeModal('exit'); openModal('lead-form')" class="w-full bg-rose-600 text-white font-bold py-4 rounded-xl hover:bg-rose-700 transition shadow-lg text-lg mb-4" data-i18n="exit_btn_yes">
                 Get the Free Checklist
             </button>
-            <button onclick="closeModal('exit')" class="text-slate-400 font-semibold text-sm hover:text-slate-600 underline">
+            <button onclick="closeModal('exit')" class="text-slate-400 font-semibold text-sm hover:text-slate-600 underline" data-i18n="exit_btn_no">
                 No thanks, I prefer paying IRS penalties
             </button>
         </div>
     </div>
 
+    <!-- Move Calendly Script to End of Body to load once -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
     <!-- SCRIPTS -->
     <script>
@@ -970,7 +985,6 @@
                 
                 fs_nav_problem: "当前挑战",
                 fs_nav_services: "核心服务",
-                fs_nav_vision: "全链路愿景",
                 fs_nav_process: "工作方式",
                 fs_nav_book: "预约咨询",
                 fs_nav_back: "返回落地页",
@@ -1018,9 +1032,6 @@
                 fs_srv3_l4: "合规税务风险评估",
                 fs_srv3_l5: "企业 HR 发展路线图",
                 fs_srv3_ft: "在盲目扩招全职 HR 部门前，先建好底层框架。",
-                fs_vis_strategy: "发展战略",
-                fs_vis_title: "全链路 HR 幸福生态",
-                fs_vis_desc: "点击下方业务板块，预览我们的战略蓝图与实施细节。",
                 fs_proc_title: "我们的薪酬风控模型",
                 fs_proc_s1: "薪酬现状审计",
                 fs_proc_d1: "审查当前的平台配置、工作流以及风险敞口。",
@@ -1045,6 +1056,12 @@
                 fs_auth_d3: "内部风控与审计出身",
                 fs_auth_l4: "方法论",
                 fs_auth_d4: "极度注重结构化文档",
+                exp_title: "根据合作深度可提供的扩展服务",
+                exp_l1: "HR / 薪酬系统集成咨询",
+                exp_l2: "核心岗位招聘支持与协调",
+                exp_l3: "远程团队海外合规外包指导",
+                exp_l4: "组织架构与薪酬结构咨询",
+                exp_ft: "我们的核心重心始终是：以薪酬为核心的 HR 基础设施建设。",
                 fs_cta_title: "薪酬管理是运营风险 <br><span class=\"text-indigo-400\">— 绝非行政琐事</span>",
                 fs_cta_sub1: "强化控制",
                 fs_cta_sub2: "降低风险",
@@ -1055,7 +1072,27 @@
                 ai_greeting: "嗨！我是基于 Gemini 大模型的 Core People Ops 智能助手。你可以问我：<br><br>✨ 帮我写一份软件工程师的 JD<br>✨ 加州的加急离职薪酬规定是什么？<br>✨ 体验 AI 政策库检索",
                 ai_btn_jd: "✨ 生成 JD",
                 ai_btn_qa: "✨ 提问合规",
-                ai_ph: "输入你想咨询的 HR 问题..."
+                ai_ph: "输入你想咨询的 HR 问题...",
+                ai_disclaimer: "仅供一般信息参考，不构成法律意见。",
+
+                /* Form & Modals */
+                form_title: "让我们来修复您的薪酬流程",
+                form_sub: "输入您的信息以获取报价方案并安排免费评估。",
+                form_l_name: "全名 *",
+                form_l_company: "公司名称 *",
+                form_l_email: "工作邮箱 *",
+                form_l_size: "员工人数 *",
+                form_p_size: "选择规模",
+                form_btn: "继续预约",
+                form_privacy_txt: "我们仅使用您的信息来安排会议。拒绝垃圾邮件。",
+                form_privacy_link: "隐私政策",
+                form_terms_link: "服务条款",
+                cal_title: "选择时间",
+                cal_sub: "您的信息已保存。请在下方选择一个时间段。",
+                exit_title: "等一下！离开之前...",
+                exit_desc: "免费下载我们的 <span class=\"font-bold text-rose-600\">薪酬合规风险自检清单</span>。确保您的多州设置没有隐藏的高额罚款隐患。",
+                exit_btn_yes: "获取免费清单",
+                exit_btn_no: "不用了，我宁愿交国税局罚款"
             },
             en: {
                 lp_nav_hint: "Looking for our full company website?",
@@ -1131,7 +1168,6 @@
 
                 fs_nav_problem: "The Challenge",
                 fs_nav_services: "Core Services",
-                fs_nav_vision: "Vision",
                 fs_nav_process: "How We Work",
                 fs_nav_book: "Book Consult",
                 fs_nav_back: "Back to LP",
@@ -1179,9 +1215,6 @@
                 fs_srv3_l4: "Risk exposure assessment",
                 fs_srv3_l5: "Growth-stage HR roadmap",
                 fs_srv3_ft: "Before hiring a full HR department, build the framework correctly.",
-                fs_vis_strategy: "Growth Strategy",
-                fs_vis_title: "Full-Cycle HR Ecosystem",
-                fs_vis_desc: "Click the sections below to preview our strategic blueprint.",
                 fs_proc_title: "Our Payroll Control Framework",
                 fs_proc_s1: "Payroll Audit",
                 fs_proc_d1: "Review current platform configuration, workflows, and risk exposure.",
@@ -1206,6 +1239,12 @@
                 fs_auth_d3: "& Internal Control",
                 fs_auth_l4: "Methodology",
                 fs_auth_d4: "Structured Documentation",
+                exp_title: "Expanded services available based on engagement scope",
+                exp_l1: "Payroll system integration advisory",
+                exp_l2: "Recruiting support coordination",
+                exp_l3: "Remote operational outsourcing guidance",
+                exp_l4: "HR organizational structure consulting",
+                exp_ft: "Primary focus remains payroll-centered HR infrastructure.",
                 fs_cta_title: "Payroll Is Operational Risk <br><span class=\"text-indigo-400\">— Not Administrative Work</span>",
                 fs_cta_sub1: "Strengthen control.",
                 fs_cta_sub2: "Reduce exposure.",
@@ -1216,7 +1255,26 @@
                 ai_greeting: "Hi! I'm the Core Ops AI Assistant powered by Gemini. You can ask me:<br><br>✨ Draft a Software Engineer JD<br>✨ What's the final pay rule in CA?<br>✨ Try AI Policy Wiki",
                 ai_btn_jd: "✨ Draft JD",
                 ai_btn_qa: "✨ Compliance QA",
-                ai_ph: "Ask any HR question..."
+                ai_ph: "Ask any HR question...",
+                ai_disclaimer: "General info only — not legal advice.",
+
+                form_title: "Let's Fix Your Payroll",
+                form_sub: "Enter your details to access pricing and schedule your free review.",
+                form_l_name: "Full Name *",
+                form_l_company: "Company Name *",
+                form_l_email: "Work Email *",
+                form_l_size: "Number of Employees *",
+                form_p_size: "Select size",
+                form_btn: "Continue to Scheduling",
+                form_privacy_txt: "We’ll only use your info to schedule and follow up. No spam.",
+                form_privacy_link: "Privacy Policy",
+                form_terms_link: "Terms",
+                cal_title: "Select a Time",
+                cal_sub: "Your info is saved. Pick a slot below.",
+                exit_title: "Wait! Before You Go...",
+                exit_desc: "Download our <span class=\"font-bold text-rose-600\">Free Payroll Risk Checklist</span>. Ensure your multi-state setup isn't hiding expensive penalties.",
+                exit_btn_yes: "Get the Free Checklist",
+                exit_btn_no: "No thanks, I prefer paying IRS penalties"
             }
         };
 
@@ -1245,6 +1303,13 @@
         }
 
         // --- Shared Modal Logic ---
+        function resetLeadModal() {
+            document.getElementById('form-step').style.display = 'block';
+            const c = document.getElementById('calendly-step');
+            c.style.display = 'none';
+            c.classList.add('hidden-initial');
+        }
+
         function openModal(type, id = null) {
             if(type === 'lead-form') {
                 document.getElementById('lead-form-modal').classList.add('active');
@@ -1325,6 +1390,7 @@
         function closeModal(type) {
             if(type === 'lead-form') {
                 document.getElementById('lead-form-modal').classList.remove('active');
+                resetLeadModal();
             } else if(type === 'exit') {
                 document.getElementById('exit-modal').classList.remove('active');
             } else if(type === 'fs-info') {
@@ -1369,6 +1435,7 @@
 
         // --- Gemini AI Logic (Full Site Only) ---
         const apiKey = ""; 
+        const aiEnabled = !!apiKey;
         const modelEndpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
         const systemPrompt = `
             You are a professional AI HR Assistant for 'Core People Operations LLC'.
@@ -1376,6 +1443,16 @@
             Capabilities: Answer US HR compliance questions, draft JDs.
             Keep answers concise, formatted with markdown. Respond in user's language.
         `;
+
+        function guardAiEnabled(){
+            if (!aiEnabled) {
+                appendMessage(currentLang === 'en'
+                    ? "AI demo is currently offline. Please add an API key."
+                    : "AI 演示暂未启用。请配置 API Key。", 'bot');
+                return false;
+            }
+            return true;
+        }
 
         async function fetchWithRetry(url, options, retries = 5) {
             const delays = [1000, 2000, 4000, 8000, 16000];
@@ -1416,13 +1493,22 @@
 
         function openAiWidget(prefillText = '') {
             if (!aiWidgetWindow.classList.contains('active')) toggleAiWidget();
-            if (prefillText) fillAndSend(prefillText);
+            if (prefillText) {
+                aiInput.value = prefillText;
+            }
+        }
+
+        // XSS safe markdown renderer
+        marked.setOptions({ headerIds:false, mangle:false });
+        function safeMarkdown(md){
+            const escaped = md.replace(/</g,"&lt;").replace(/>/g,"&gt;");
+            return marked.parse(escaped);
         }
 
         function appendMessage(text, sender) {
             const msgDiv = document.createElement('div');
             msgDiv.className = `chat-message ${sender} shadow-sm`;
-            if (sender === 'bot') msgDiv.innerHTML = marked.parse(text);
+            if (sender === 'bot') msgDiv.innerHTML = safeMarkdown(text);
             else msgDiv.textContent = text;
             aiMessagesContainer.appendChild(msgDiv);
             aiMessagesContainer.scrollTop = aiMessagesContainer.scrollHeight;
@@ -1439,6 +1525,7 @@
 
         async function handleAiSubmit(e) {
             if (e) e.preventDefault();
+            if (!guardAiEnabled()) return;
             const text = aiInput.value.trim();
             if (!text) return;
             aiInput.value = '';
