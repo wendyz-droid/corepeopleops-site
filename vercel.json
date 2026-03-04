@@ -1,3 +1,19 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/payroll-review-confirmed",
+      "headers": [
+        { "key": "Content-Type", "value": "text/html; charset=utf-8" },
+        { "key": "Content-Disposition", "value": "inline" }
+      ]
+    },
+    {
+      "source": "/payroll-review-confirmed.html",
+      "headers": [
+        { "key": "Content-Type", "value": "text/html; charset=utf-8" },
+        { "key": "Content-Disposition", "value": "inline" }
+      ]
+    }
+  ]
 }
